@@ -8,9 +8,12 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
+
+import {
+  Text
+} from './app/components/Text';
 
 class Eric extends Component {
   render() {

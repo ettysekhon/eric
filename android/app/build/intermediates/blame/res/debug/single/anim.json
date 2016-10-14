@@ -1,7 +1,7 @@
 [
     {
         "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_out.xml",
-        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.34.1/res/anim/catalyst_push_up_out.xml"
+        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.35.0/res/anim/catalyst_push_up_out.xml"
     },
     {
         "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
@@ -21,11 +21,11 @@
     },
     {
         "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_in.xml",
-        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.34.1/res/anim/catalyst_push_up_in.xml"
+        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.35.0/res/anim/catalyst_push_up_in.xml"
     },
     {
         "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/fade_in.xml",
-        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.34.1/res/anim/fade_in.xml"
+        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.35.0/res/anim/fade_in.xml"
     },
     {
         "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
@@ -37,15 +37,15 @@
     },
     {
         "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/fade_out.xml",
-        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.34.1/res/anim/fade_out.xml"
-    },
-    {
-        "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/slide_up.xml",
-        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.34.1/res/anim/slide_up.xml"
+        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.35.0/res/anim/fade_out.xml"
     },
     {
         "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
         "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/slide_up.xml",
+        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.35.0/res/anim/slide_up.xml"
     },
     {
         "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
@@ -57,7 +57,7 @@
     },
     {
         "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/slide_down.xml",
-        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.34.1/res/anim/slide_down.xml"
+        "source": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.35.0/res/anim/slide_down.xml"
     },
     {
         "merged": "/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
