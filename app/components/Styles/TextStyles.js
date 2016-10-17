@@ -1,5 +1,4 @@
 import {
-  Dimensions,
   StyleSheet,
 } from 'react-native';
 
@@ -13,11 +12,8 @@ const getColor = (prop, color) => {
   return ret;
 }
 
-console.log('normal', normal);
-console.log('getColor', getColor('color', 'primary'));
-
 export default StyleSheet.create({
   font: { fontFamily: Fonts.type.base },
-  normal: { ...normal, ...getColor('color', 'primary') },
-  h1: { ...h1, ...getColor('color', 'primary') }
+  normal: { ...normal, ...getColor('color', 'grayMediumDark') },
+  h1: { ...h1, ...getColor('color', 'grayDark') }
 });

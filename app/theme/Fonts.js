@@ -17,24 +17,25 @@ const type = {
 }
 
 const size = {
-  h1: normalize(50),
-  h2: normalize(40),
-  h3: normalize(24),
-  h4: normalize(20),
-  regular: normalize(24),
-  medium: normalize(20)
+  h1: normalize(25),
+  h2: normalize(20),
+  h3: normalize(12),
+  h4: normalize(10),
+  regular: normalize(12),
+  medium: normalize(10)
 }
 
 const style = {
   h1: {
     fontWeight: 'bold',
-    fontSize: size.h1,
-    letterSpacing: -1,
+    fontSize: size.h1
   },
   h2: {
+    fontWeight: 'bold',
     fontSize: size.h2
   },
   h3: {
+    fontWeight: 'bold',
     fontSize: size.h3
   },
   h4: {

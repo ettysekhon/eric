@@ -1,10 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
+
 import {
   AppRegistry,
   StyleSheet,
@@ -15,21 +10,23 @@ import {
   Text
 } from './app/components/Text';
 
+import Card from './app/components/Card';
+import Content from './app/components/Content';
+import Container from './app/components/Container';
+import Header from './app/components/Header';
+
 class Eric extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Container>
+        <Header
+          subTitle={'17:00, 09 May 2016'}
+          title={'M O N D A Y'}
+        />
+        <Content>
+          <Card title={'TOTAL ORDERS'} />
+        </Content>
+      </Container>
     );
   }
 }
