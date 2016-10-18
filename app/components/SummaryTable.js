@@ -7,96 +7,90 @@ import {
   View
 } from 'react-native';
 
+import LinearGradient from 'react-native-linear-gradient';
+
 import {
   Heading1,
-  Heading4,
   Text,
   TextMedium,
 } from './Text';
 
-import styles from './Styles/SummaryTableStyles';
-import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
+import { Colors } from '../theme/';
 
-const HeaderCell = ({ cell, up }) => {
-  const direction = up ? 'long-arrow-up' : 'long-arrow-down';
-  const arrowColor = up ? 'green' : 'red';
+import styles from './Styles/SummaryTableStyles';
+
+const Cell = ({ cell, style }) => {
   return (
-    <View style={[styles.headerCell]}>
-      <FontAwesomeIcons
-        color={arrowColor}
-        name={direction}
-        size={8}
-      />
-      <TextMedium style={styles.headerText}>
+    <View style={[styles.cell, style]}>
+      <TextMedium style={{
+        color: 'white'
+      }}>
         {
           cell
         }
       </TextMedium>
     </View>
   )
-}
+};
 
-const Cell = ({ cell, isHeader, up, style }) => {
-  const cellContent = isHeader ? (
-    <HeaderCell
-      up={up}
-      cell={cell}
-    />) : (
-      <Heading4>
-        {
-          cell
-        }
-      </Heading4>
+const Row = ({ row, style }) => {
+  const cells = row.map((cell, index) => {
+    const style = row.length === index + 1
+      ? {
+        borderRightWidth: 0
+      }
+      : {};
+    return (
+      <Cell
+        cell={cell}
+        key={index}
+        style={style}
+      />
     );
+  });
   return (
-    <View style={[styles.cell, style]}>
+    <View style={[styles.row, style]}>
       {
-        cellContent
+        cells
       }
     </View>
   )
 };
 
-const SummaryTable = ({ data }) => {
-  const header = data.map((cell, index) => {
+const Table = ({ data }) => {
+  const rows = data.map((row, index) => {
+    const style = data.length === index + 1
+      ? {
+        borderBottomWidth: 0
+      }
+      : {};
     return (
-      <Cell
-        cell={cell.title}
-        up={cell.up}
-        isHeader={true}
+      <Row
         key={index}
-      />
-    );
-  });
-  const values = data.map((cell, index) => {
-    return (
-      <Cell
-        cell={cell.value}
-        isHeader={false}
-        key={index}
-      />
-    );
+        style={style}
+        row={row}
+      />);
   });
   return (
-    <View>
-      <View style={[styles.row]}>
+    <LinearGradient
+      start={[0.0, 0.0]} end={[1.0, 0.0]}
+      colors={[
+        Colors.secondaryGradientStart,
+        Colors.secondaryGradientEnd
+      ]}
+      style={styles.gradient}
+    >
       {
-        header
+        rows
       }
-      </View>
-      <View style={[styles.row]}>
-      {
-        values
-      }
-      </View>
-    </View>
+    </LinearGradient>
   );
 };
 
-SummaryTable.displayName = 'SummaryTable';
+Table.displayName = 'Table';
 
-SummaryTable.propTypes = {
+Table.propTypes = {
   data: PropTypes.array
 };
 
-export default SummaryTable;
+export default Table;

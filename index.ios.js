@@ -10,7 +10,7 @@ import {
   Text
 } from './app/components/Text';
 
-import Card from './app/components/Card';
+import SummaryCard from './app/components/SummaryCard';
 import Content from './app/components/Content';
 import Container from './app/components/Container';
 import Header from './app/components/Header';
@@ -50,7 +50,7 @@ class Eric extends Component {
           title={summary.title}
         />
         <Content>
-          <Card
+          <SummaryCard
             tableData={summary.data[0].table}
             summaryData={summary.data[0].delta}
             title={summary.data[0].title} />

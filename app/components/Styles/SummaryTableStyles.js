@@ -9,7 +9,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     borderBottomWidth: 0.5,
     borderColor: 'white',
-    paddingTop: 5
+    backgroundColor: 'transparent'
   },
   cell: {
     flex: 1,
@@ -18,13 +18,17 @@ export default StyleSheet.create({
     paddingHorizontal: 0,
     borderRightWidth: 0.5,
     borderColor: 'white',
-    paddingTop: 5
+    paddingVertical: 10
   },
-  headerCell: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  headerText: {
-    marginLeft: 5
+  gradient: {
+    marginLeft: -20,
+    marginRight: -20,
+    elevation: 2,
+    shadowColor: "#000000",
+    shadowOpacity: 0.2,
+    shadowOffset: {
+      height: 10,
+      width: 0
+    }
   }
 });

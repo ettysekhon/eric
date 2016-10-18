@@ -11,9 +11,9 @@ import {
   Heading3
 } from './Text';
 
-import Table from './Table';
 import SummaryTable from './SummaryTable';
-import styles from './Styles/CardStyles';
+import SummaryDeltaTable from './SummaryDeltaTable';
+import styles from './Styles/SummaryCardStyles';
 
 const CardContent = ({ children }) => {
   return (
@@ -28,9 +28,9 @@ const Card = ({ title, summaryData, tableData }) => {
         <CardContent>
           <Heading3>{title}</Heading3>
         </CardContent>
-        <Table data={tableData} />
+        <SummaryTable data={tableData} />
         <CardContent>
-          <SummaryTable data={summaryData} />
+          <SummaryDeltaTable data={summaryData} />
         </CardContent>
       </View>
     </View>
