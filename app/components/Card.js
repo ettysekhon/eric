@@ -6,31 +6,32 @@ import {
   View
 } from 'react-native';
 
-import LinearGradient from 'react-native-linear-gradient';
-
 import {
-  Text
+  Text,
+  Heading3
 } from './Text';
 
+import Table from './Table';
+import SummaryTable from './SummaryTable';
 import styles from './Styles/CardStyles';
-import { Colors } from '../theme/';
 
-const Card = ({ title }) => {
+const CardContent = ({ children }) => {
+  return (
+    <View style={styles.content}>{children}</View>
+  );
+};
+
+const Card = ({ title, summaryData, tableData }) => {
   return (
     <View style={styles.card}>
       <View style={styles.inner}>
-        <Text style={styles.content}>{title}</Text>
-        <LinearGradient
-          start={[0.0, 0.0]} end={[1.0, 0.0]}
-          colors={[
-            Colors.secondaryGradientStart,
-            Colors.secondaryGradientEnd
-          ]}
-          style={styles.data}
-        >
-          <View><Text>{'Some data'}</Text></View>
-        </LinearGradient>
-        <Text style={styles.content}>{title}</Text>
+        <CardContent>
+          <Heading3>{title}</Heading3>
+        </CardContent>
+        <Table data={tableData} />
+        <CardContent>
+          <SummaryTable data={summaryData} />
+        </CardContent>
       </View>
     </View>
   );
@@ -39,7 +40,9 @@ const Card = ({ title }) => {
 Card.displayName = 'Card';
 
 Card.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  tableData: PropTypes.array,
+  summaryData: PropTypes.array
 };
 
 export default Card;
