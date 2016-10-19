@@ -10,10 +10,13 @@ export default StyleSheet.create({
     paddingVertical: 10,
     backgroundColor: Colors.background
   },
+  heading: {
+    color: Colors.grayMediumDark
+  },
   inner: {
     backgroundColor: Colors.grayLight,
   },
   content: {
-    padding: 10,
+    padding: 12,
   }
 });

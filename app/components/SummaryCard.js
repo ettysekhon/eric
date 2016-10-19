@@ -8,7 +8,7 @@ import {
 
 import {
   Text,
-  Heading3
+  Heading4
 } from './Text';
 
 import SummaryTable from './SummaryTable';
@@ -21,28 +21,40 @@ const CardContent = ({ children }) => {
   );
 };
 
-const Card = ({ title, summaryData, tableData }) => {
+const SummaryCard = ({ tables, delta }) => {
+  const tbls = tables.map((table, index) => {
+    return (
+      <View key={index}>
+        <CardContent>
+          <Heading4
+            style={styles.heading}
+            >{table.title}
+          </Heading4>
+        </CardContent>
+        <SummaryTable data={table.data} />
+      </View>
+    )
+  });
   return (
     <View style={styles.card}>
       <View style={styles.inner}>
+        {
+          tbls
+        }
         <CardContent>
-          <Heading3>{title}</Heading3>
-        </CardContent>
-        <SummaryTable data={tableData} />
-        <CardContent>
-          <SummaryDeltaTable data={summaryData} />
+          <SummaryDeltaTable data={delta} />
         </CardContent>
       </View>
     </View>
   );
 };
 
-Card.displayName = 'Card';
+SummaryCard.displayName = 'SummaryCard';
 
-Card.propTypes = {
+SummaryCard.propTypes = {
   title: PropTypes.string,
-  tableData: PropTypes.array,
-  summaryData: PropTypes.array
+  tables: PropTypes.array,
+  delta: PropTypes.array
 };
 
-export default Card;
+export default SummaryCard;

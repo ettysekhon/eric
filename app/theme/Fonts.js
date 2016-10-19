@@ -42,7 +42,8 @@ const style = {
   },
   h4: {
     fontWeight: 'bold',
-    fontSize: size.h4
+    fontSize: size.h4,
+    letterSpacing: 1.25
   },
   regular: {
     fontSize: size.regular

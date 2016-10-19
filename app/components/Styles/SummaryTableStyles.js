@@ -25,7 +25,7 @@ export default StyleSheet.create({
     marginRight: -20,
     elevation: 2,
     shadowColor: "#000000",
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowOffset: {
       height: 10,
       width: 0
