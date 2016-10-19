@@ -7,11 +7,12 @@ import {
 } from 'react-native';
 
 import styles from './Styles/BackgroundImageStyles';
+import images from '../theme/Images';
 
 const BackgroundImage = ({ children }) => {
   return (
     <Image
-      source={require('../../assets/images/background.jpg')}
+      source={images.background}
       style={styles.container}
     >
       {
@@ -24,7 +25,7 @@ const BackgroundImage = ({ children }) => {
 BackgroundImage.displayName = 'BackgroundImage';
 
 BackgroundImage.propTypes = {
-  children: PropTypes.node,
-}
+  children: PropTypes.node
+};
 
 export default BackgroundImage;

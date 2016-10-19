@@ -3,19 +3,17 @@ import React, {
 } from 'react';
 
 import {
-  StyleSheet,
   View
 } from 'react-native';
 
+import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
+
 import {
-  Heading1,
   Heading4,
-  Text,
   TextMedium,
 } from './Text';
 
 import styles from './Styles/SummaryDeltaTableStyles';
-import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 
 import {
   normalize
@@ -37,20 +35,22 @@ const HeaderCell = ({ cell, up }) => {
         }
       </TextMedium>
     </View>
-  )
-}
+  );
+};
 
 const Cell = ({ cell, isHeader, up, style }) => {
-  const cellContent = isHeader ? (
+  const cellContent = isHeader
+    ? (
     <HeaderCell
-      up={up}
       cell={cell}
-    />) : (
-      <Heading4>
-        {
-          cell
-        }
-      </Heading4>
+      up={up}
+    />)
+    : (
+    <Heading4>
+      {
+        cell
+      }
+    </Heading4>
     );
   return (
     <View style={[styles.cell, style]}>
@@ -58,7 +58,7 @@ const Cell = ({ cell, isHeader, up, style }) => {
         cellContent
       }
     </View>
-  )
+  );
 };
 
 const SummaryDeltaTable = ({ data }) => {
@@ -66,9 +66,9 @@ const SummaryDeltaTable = ({ data }) => {
     return (
       <Cell
         cell={cell.title}
-        up={cell.up}
-        isHeader={true}
+        isHeader
         key={index}
+        up={cell.up}
       />
     );
   });
@@ -84,14 +84,14 @@ const SummaryDeltaTable = ({ data }) => {
   return (
     <View>
       <View style={[styles.row]}>
-      {
-        header
-      }
+        {
+          header
+        }
       </View>
       <View style={[styles.row]}>
-      {
-        values
-      }
+        {
+          values
+        }
       </View>
     </View>
   );

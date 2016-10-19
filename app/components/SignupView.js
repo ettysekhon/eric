@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import {
-  AppRegistry,
-  StyleSheet,
-  View
-} from 'react-native';
+  Text
+} from './Text';
 
-import {
-  BackgroundImage
-} from './BackgroundImage';
+import BackgroundImage from './BackgroundImage';
 
-import Container from './Container';
-
-const SignupView = () => {
+const SummaryView = () => {
   return (
-    <Container>
-      <BackgroundImage />
-    </Container>
+    <BackgroundImage>
+      <Text>Hello</Text>
+    </BackgroundImage>
   );
-}
+};
 
-export default SignupView;
+export default SummaryView;

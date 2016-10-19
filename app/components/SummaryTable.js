@@ -3,15 +3,12 @@ import React, {
 } from 'react';
 
 import {
-  StyleSheet,
   View
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
 
 import {
-  Heading1,
-  Text,
   TextMedium,
 } from './Text';
 
@@ -22,20 +19,22 @@ import styles from './Styles/SummaryTableStyles';
 const Cell = ({ cell, style }) => {
   return (
     <View style={[styles.cell, style]}>
-      <TextMedium style={{
-        color: 'white'
-      }}>
+      <TextMedium
+        style={{
+          color: 'white'
+        }}
+      >
         {
           cell
         }
       </TextMedium>
     </View>
-  )
+  );
 };
 
 const Row = ({ row, style }) => {
   const cells = row.map((cell, index) => {
-    const style = row.length === index + 1
+    const styl = row.length === index + 1
       ? {
         borderRightWidth: 0
       }
@@ -44,7 +43,7 @@ const Row = ({ row, style }) => {
       <Cell
         cell={cell}
         key={index}
-        style={style}
+        style={styl}
       />
     );
   });
@@ -54,7 +53,7 @@ const Row = ({ row, style }) => {
         cells
       }
     </View>
-  )
+  );
 };
 
 const Table = ({ data }) => {

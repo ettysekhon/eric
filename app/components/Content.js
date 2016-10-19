@@ -25,6 +25,6 @@ Content.displayName = 'Content';
 
 Content.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
 export default Content;

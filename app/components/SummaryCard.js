@@ -7,7 +7,6 @@ import {
 } from 'react-native';
 
 import {
-  Text,
   Heading4
 } from './Text';
 
@@ -21,6 +20,12 @@ const CardContent = ({ children }) => {
   );
 };
 
+CardContent.displayName = 'CardContent';
+
+CardContent.propTypes = {
+  children: PropTypes.node
+};
+
 const SummaryCard = ({ tables, delta }) => {
   const tbls = tables.map((table, index) => {
     return (
@@ -28,12 +33,12 @@ const SummaryCard = ({ tables, delta }) => {
         <CardContent>
           <Heading4
             style={styles.heading}
-            >{table.title}
+          >{table.title}
           </Heading4>
         </CardContent>
         <SummaryTable data={table.data} />
       </View>
-    )
+    );
   });
   return (
     <View style={styles.card}>
@@ -52,9 +57,8 @@ const SummaryCard = ({ tables, delta }) => {
 SummaryCard.displayName = 'SummaryCard';
 
 SummaryCard.propTypes = {
-  title: PropTypes.string,
-  tables: PropTypes.array,
-  delta: PropTypes.array
+  delta: PropTypes.array,
+  tables: PropTypes.array
 };
 
 export default SummaryCard;

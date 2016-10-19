@@ -1,8 +1,3 @@
-const rows = [
-  ['09 May 16', '02 May 16', '11 May 15', '18 May 15'],
-  ['119,365', '89,361', '119,365', '89,361']
-];
-
 const summary = {
   title: 'MONDAY',
   subTitle: '17:00, 09 May 2016',
@@ -32,6 +27,6 @@ const summary = {
       data: ['119,365', '89,361', '33.6%', '92,632', '28.9%', '74,291', '60.7%']
     }]
   }]
-}
+};
 
-export default summary
+export default summary;

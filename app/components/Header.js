@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 
 import {
-  StyleSheet,
   View
 } from 'react-native';
 
@@ -26,7 +25,8 @@ const Header = ({ title, subTitle }) => {
 Header.displayName = 'Header';
 
 Header.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  subTitle: PropTypes.string
 };
 
 export default Header;

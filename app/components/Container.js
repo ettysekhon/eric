@@ -3,11 +3,8 @@ import React, {
 } from 'react';
 
 import {
-  StyleSheet,
   View
 } from 'react-native';
-
-import { Colors } from '../theme/';
 
 import styles from './Styles/ContainerStyles';
 
@@ -25,6 +22,6 @@ Container.displayName = 'Container';
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
 export default Container;
