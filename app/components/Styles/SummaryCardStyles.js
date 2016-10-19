@@ -1,13 +1,18 @@
 import {
+  Dimensions,
   StyleSheet,
 } from 'react-native';
 
 import { Colors } from '../../theme/';
 
+import {
+  normalize
+} from '../../utils/size';
+
 export default StyleSheet.create({
   card: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingHorizontal: normalize(20),
+    paddingVertical: normalize(10),
     backgroundColor: Colors.background
   },
   heading: {
@@ -17,6 +22,6 @@ export default StyleSheet.create({
     backgroundColor: Colors.grayLight,
   },
   content: {
-    padding: 12,
+    padding: normalize(12),
   }
 });

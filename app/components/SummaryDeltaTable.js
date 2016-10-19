@@ -17,6 +17,10 @@ import {
 import styles from './Styles/SummaryDeltaTableStyles';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
 
+import {
+  normalize
+} from '../utils/size';
+
 const HeaderCell = ({ cell, up }) => {
   const direction = up ? 'long-arrow-up' : 'long-arrow-down';
   const arrowColor = up ? 'green' : 'red';
@@ -25,7 +29,7 @@ const HeaderCell = ({ cell, up }) => {
       <FontAwesomeIcons
         color={arrowColor}
         name={direction}
-        size={8}
+        size={normalize(8)}
       />
       <TextMedium style={styles.headerText}>
         {

@@ -4,6 +4,10 @@ import {
 
 import { Colors } from '../../theme/';
 
+import {
+  normalize
+} from '../../utils/size';
+
 export default StyleSheet.create({
   row: {
     flexDirection: 'row',
@@ -25,6 +29,6 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   headerText: {
-    marginLeft: 5
+    marginLeft: normalize(5)
   }
 });

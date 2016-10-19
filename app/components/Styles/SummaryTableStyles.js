@@ -1,6 +1,11 @@
 import {
+  Dimensions,
   StyleSheet,
 } from 'react-native';
+
+import {
+  normalize
+} from '../../utils/size';
 
 import { Colors } from '../../theme/';
 
@@ -18,11 +23,11 @@ export default StyleSheet.create({
     paddingHorizontal: 0,
     borderRightWidth: 0.5,
     borderColor: 'white',
-    paddingVertical: 10
+    paddingVertical: normalize(10)
   },
   gradient: {
-    marginLeft: -20,
-    marginRight: -20,
+    marginLeft: normalize(-15),
+    marginRight: normalize(-15),
     elevation: 2,
     shadowColor: "#000000",
     shadowOpacity: 0.1,

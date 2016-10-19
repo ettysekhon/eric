@@ -1,10 +1,6 @@
-import { Dimensions } from 'react-native';
-
-const scale = Dimensions.get('window').width / 375;
-
-const normalize = (size) => {
-  return Math.round(scale * size);
-};
+import {
+  normalize
+} from '../utils/size';
 
 // TODO:
 // 1. change to Montserrat
@@ -38,7 +34,7 @@ const style = {
   h3: {
     fontWeight: 'bold',
     fontSize: size.h3,
-    letterSpacing: 1.25
+      letterSpacing: 1.25
   },
   h4: {
     fontWeight: 'bold',
