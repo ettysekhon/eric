@@ -6,14 +6,16 @@ import {
   View
 } from 'react-native';
 
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import LinearGradient from 'react-native-linear-gradient';
-
+/* eslint-enable import/extensions */
+/* eslint-enable import/no-unresolved */
 import {
   TextMedium,
 } from './Text';
 
 import { Colors } from '../theme/';
-
 import styles from './Styles/SummaryTableStyles';
 
 const Cell = ({ cell, style }) => {
@@ -66,17 +68,18 @@ const Table = ({ data }) => {
     return (
       <Row
         key={index}
-        style={style}
         row={row}
+        style={style}
       />);
   });
   return (
     <LinearGradient
-      start={[0.0, 0.0]} end={[1.0, 0.0]}
       colors={[
         Colors.secondaryGradientStart,
         Colors.secondaryGradientEnd
       ]}
+      end={[1.0, 0.0]}
+      start={[0.0, 0.0]}
       style={styles.gradient}
     >
       {
@@ -89,7 +92,9 @@ const Table = ({ data }) => {
 Table.displayName = 'Table';
 
 Table.propTypes = {
+  /* eslint-disable react/forbid-prop-types */
   data: PropTypes.array
+  /* eslint-enable react/forbid-prop-types */
 };
 
 export default Table;
