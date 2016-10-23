@@ -1,6 +1,37 @@
-ARJUN-SPANISH:
+ARJUN:
 -----------
-1. Videos - Alphabet
+SPANISH:
+1. Videos - Alphabet (Spanish)
+
+GERMAN
+
+GEOGRAPHY:
+
+HISTORY:
+
+ENGLISH:
+  * Spellings
+MATHS:
+  * LCM/HCF
+  * Factors/Multiples
+  * Indices
+  * FDP
+  * Converting between units
+  * Powers of 10
+  * Negative
+
+PHYSICS
+  * Finish cheat sheet & revise
+CHEMISTRY:
+  revise for test -
+
+BIOLOGY:
+
+DT:
+  * Flow Chart
+
+
+
 
 YUVRAJ-MATHS:
 -------------

@@ -1,20 +1,26 @@
+1. add some state in form control (onChange)
+2. set text state in form control from props
+3. add submit button to input
+4. add redux data flow and navigation
+5. add pin screen
+
 SPRINT 1
 ---
 1. setup app to use custom font [DONE]
 * create responsive text [DONE]
 * add theme colors [DONE]
-* create summary data view
-  * create table component
-  * create card component
-* create email entry view
+* create summary data view [DONE]
+  * create table component [DONE]
+  * create card component [DONE]
+* create email entry view [IN PROGRESS]
 * create pin entry view
-* create splash screens
-* create icons
+* implement application data flow and routing
+* create splash screens (all sizes)
+* create icons (all sizes)
 * create offline handling
-* create API
+* create API (returning dummy data)
 * setup app certificates for app stores
-* validate and submit app
-* create simple API returning dummy data
+* validate and submit to testflight
 
 SPRINT 2
 ---

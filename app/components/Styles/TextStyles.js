@@ -10,7 +10,7 @@ const getColor = (prop, color) => {
   const ret = {};
   ret[prop] = Colors[color];
   return ret;
-}
+};
 
 export default StyleSheet.create({
   font: { fontFamily: Fonts.type.base },

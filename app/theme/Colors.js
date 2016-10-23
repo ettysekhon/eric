@@ -12,6 +12,6 @@ const colors = {
   secondaryGradientStart: '#AD6BFF',
   secondaryGradientEnd: '#74BCF7',
   clear: 'rgba(0,0,0,0)'
-}
+};
 
-export default colors
+export default colors;
