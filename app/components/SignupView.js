@@ -1,9 +1,9 @@
 import React, {
-  Component
+  Component,
+  PropTypes
 } from 'react';
 
 import {
-  Text,
   View
 } from 'react-native';
 
@@ -12,6 +12,7 @@ import styles from './Styles/SignupViewStyles';
 import Logo from './Logo';
 import FormControl from './FormControl';
 import ButtonEric from './ButtonEric';
+import routes from '../utils/routes';
 
 import {
   EmailTextInput
@@ -43,7 +44,14 @@ class SignupView extends Component {
             />
             <ButtonEric
               onPress={() => {
-                console.log('submit!');
+                const { navigator } = this.props;
+                if (navigator) {
+                  requestAnimationFrame(() => {
+                    return navigator.push({
+                      route: routes.SUMMARY
+                    });
+                  });
+                }
               }}
             >
               {'Submit'}
@@ -54,5 +62,13 @@ class SignupView extends Component {
     );
   }
 }
+
+SignupView.displayName = 'SignupView';
+
+SignupView.propTypes = {
+  /* eslint-disable react/forbid-prop-types */
+  navigator: PropTypes.object.isRequired
+  /* eslint-enable react/forbid-prop-types */
+};
 
 export default SignupView;
