@@ -1,25 +1,38 @@
 # eric
 Early Reporting Information Centre
 
-## Backlog for MVP
+### Increment 1 Tasks:
+---
+1. setup app to use custom font [DONE]
+* create responsive text [DONE]
+* add theme colors [DONE]
+* create summary data view [DONE]
+  * create table component [DONE]
+  * create card component [DONE]
+* create email entry view [DONE]
+* create pin entry view [DONE]
+* implement application data flow and routing [DONE]
+* setup app certificates for app stores [DONE]
+* validate app and upload
+* create splash screens (all sizes)
+* create icons (all sizes)
+* create API (returning dummy data)
+* create offline handling
+* submit to testflight
+* responsive text/orientation handling
+
+### Increment 2 Tasks:
+---
+1. some minor tech tasks
+  * add .eslintrc file
+  * use rnpm link for fonts
+* get real API data
 
 ### Screens:
 ---
-1. create a splash screen
-2. create email signup screen (email and submit)
-3. create pin entry screen
-3. create summary screen (on test account success show the summary page)
 
 ### Components:
-5. Create form components -> form input and label (label component)
-
-### Small Items:
 ---
-1. Validate email address
-2. Validate pin code (all numbers)
-3. Create logo (icon only)
-4. Create logo (icon and text)
-1. Use linear gradient colour
 
 ### Assets:
 ---
@@ -48,14 +61,12 @@ Early Reporting Information Centre
 
 ## Backlog
 
-* 3 pin entry failure then account is locked
-4. if account is real account create page to show
-6. expander accordian (maybe earlier)
-7. nav bar header with parallax
-1. swipeable screen (left makes you pop navigator)
-4. Use PixelRatio for Images?
-5. real data use HTTPS API?
-
-## Backlog/Nice to haves
-1. Responsive text - bigger text for bigger devices
-2. Use React Native Navigator Experimental
+1. 3 pin entry failure then account is locked
+* if account is real account create page to show
+* expander accordian
+* nav bar header with parallax
+* swipeable screen (left makes you pop navigator)
+* Use PixelRatio for Images?
+* real data use HTTPS API?
+* Responsive text - bigger text for bigger devices
+* Use React Native Navigator Experimental
