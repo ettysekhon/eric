@@ -13,12 +13,13 @@ Early Reporting Information Centre
 * create pin entry view [DONE]
 * implement application data flow and routing [DONE]
 * setup app certificates for app stores [DONE]
-* validate app and upload
-* create splash screens (all sizes)
-* create icons (all sizes)
+* create splash screens (all sizes) [DONE]
+* create icons (all sizes) [DONE]
+* validate app and upload [DONE]
+* submit to testflight [DONE]
 * create API (returning dummy data)
+* wire up API calls
 * create offline handling
-* submit to testflight
 * responsive text/orientation handling
 
 ### Increment 2 Tasks:
