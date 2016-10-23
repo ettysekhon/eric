@@ -21,6 +21,14 @@ Early Reporting Information Centre
 * wire up API calls
 * create offline handling
 * responsive text/orientation handling
+* update final screen shots and descriptions for app store listing
+* update android assets
+* test on android
+* submit to play store
+
+### Increment 1 or 2 Tasks:
+---
+* update landscape view to include additional columns (do in increment 1 or 2?)
 
 ### Increment 2 Tasks:
 ---
