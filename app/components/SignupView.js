@@ -48,7 +48,7 @@ class SignupView extends Component {
                 this.setState(state);
                 /* eslint-enable react/no-set-state */
               }}
-              placeholder={'Enter email address'}
+              placeholder={'enter email address'}
               style={styles.formControl}
               value={this.state.emailAddress}
             />

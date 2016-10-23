@@ -46,7 +46,7 @@ class SignupView extends Component {
                   this.setState({ text, canSubmit: false });
                 }
               }}
-              placeholder={'Enter your PIN'}
+              placeholder={'enter your pin'}
               style={styles.formControl}
               value={this.state.text}
             />

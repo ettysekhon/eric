@@ -2,14 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "4 - iphone - portrait - ios 5,6.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "5.5 - iphone - portrait - ios 8,9.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "5.5 - iphone - landscape ios 8,9.png",
       "scale" : "3x"
     }
   ],

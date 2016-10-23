@@ -14,6 +14,7 @@ import SignupView from './components/SignupView';
 import SummaryView from './components/SummaryView';
 
 import routes from './utils/routes';
+import { Colors } from './theme/';
 
 // TODO: refactor navigator
 const renderRoute = (route, navigator) => {
@@ -108,6 +109,7 @@ AppNavigator.childContextTypes = {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: Colors.background,
     flex: 1
   },
 });
