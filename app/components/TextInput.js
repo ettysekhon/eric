@@ -7,7 +7,7 @@ import styles from './Styles/TextInputStyles';
 
 export const EmailTextInput = ({ style, ...props }) => {
   const newProps = {
-    keyboardType: 'numeric',
+    keyboardType: 'email-address',
     placeholderTextColor: 'white'
   };
   return (
@@ -22,13 +22,14 @@ export const EmailTextInput = ({ style, ...props }) => {
 export const PasswordNumberTextInput = ({ style, ...props }) => {
   const newProps = {
     autoCorrect: false,
-    secureTextEntry: false,
+    enablesReturnKeyAutomatically: true,
+    secureTextEntry: true,
     keyboardType: 'numeric',
     placeholderTextColor: 'white'
   };
   return (
     <RNTextInput
-      style={[styles.textInput, style]}
+      style={[styles.textInput, styles.numberInput, style]}
       {...props}
       {...newProps}
     />

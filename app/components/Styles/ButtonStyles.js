@@ -10,6 +10,8 @@ export default StyleSheet.create({
     borderRadius: 0
   },
   textStyle: {
-    color: '#fff'
+    color: '#fff',
+    fontSize: 14,
+    letterSpacing: 2
   }
 });

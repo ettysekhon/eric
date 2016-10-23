@@ -9,14 +9,22 @@ import {
   Navigator
 } from 'react-native';
 
+import LoginView from './components/LoginView';
 import SignupView from './components/SignupView';
 import SummaryView from './components/SummaryView';
+
 import routes from './utils/routes';
 
 // TODO: refactor navigator
 const renderRoute = (route, navigator) => {
   console.log('route', route);
   switch (route.route) {
+  case routes.LOGIN:
+    return (
+      <LoginView
+        navigator={navigator}
+      />
+    );
   case routes.SIGNUP:
     return (
       <SignupView

@@ -25,7 +25,7 @@ const TControl = FormControl(EmailTextInput);
 class SignupView extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: 'Hello' };
+    this.state = { emailAddress: '', canSubmit: false };
   }
   render() {
     return (
@@ -37,24 +37,35 @@ class SignupView extends Component {
               autoFocus
               label={'ACCOUNT EMAIL'}
               onChangeText={(text) => {
-                this.setState({ text });
+                /* eslint-disable max-len */
+                const emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                /* eslint-enable max-len */
+                const state = { ...this.state, emailAddress: text };
+                const validEmail = state.emailAddress === '' || emailRegEx.test(state.emailAddress);
+                const isEmpty = state.emailAddress === '';
+                state.canSubmit = !(isEmpty || !validEmail);
+                /* eslint-disable react/no-set-state */
+                this.setState(state);
+                /* eslint-enable react/no-set-state */
               }}
               placeholder={'Enter email address'}
               style={styles.formControl}
+              value={this.state.emailAddress}
             />
             <ButtonEric
+              isDisabled={!this.state.canSubmit}
               onPress={() => {
                 const { navigator } = this.props;
                 if (navigator) {
                   requestAnimationFrame(() => {
                     return navigator.push({
-                      route: routes.SUMMARY
+                      route: routes.LOGIN
                     });
                   });
                 }
               }}
             >
-              {'Submit'}
+              {'SUBMIT'}
             </ButtonEric>
           </View>
         </View>
