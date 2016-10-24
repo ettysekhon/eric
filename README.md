@@ -17,10 +17,15 @@ Early Reporting Information Centre
 * create icons (all sizes) [DONE]
 * validate app and upload [DONE]
 * submit to testflight [DONE]
+* test ipad
 * create API (returning dummy data)
 * wire up API calls
+* send device data on API calls (for logging)
+* security logging/analytics
 * create offline handling
-* responsive text/orientation handling
+* add signup link on login screen
+* persist signup/email address on device (so user does not have to re-enter)
+* responsive text/orientation handling (see signup screen)
 * update final screen shots and descriptions for app store listing
 * update android assets
 * test on android
@@ -28,14 +33,29 @@ Early Reporting Information Centre
 
 ### Increment 1 or 2 Tasks:
 ---
-* update landscape view to include additional columns (do in increment 1 or 2?)
+* update landscape view to include additional columns
+* accordian/expander to hide data
 
 ### Increment 2 Tasks:
 ---
-1. some minor tech tasks
-  * add .eslintrc file
-  * use rnpm link for fonts
-* get real API data
+* use real API data
+* use IP range/firewall (to restrict usage/add security)
+* use fixed accounts
+* add top 10 data sets
+* lock account on n failed login attempts
+* submit to app/play store
+
+### Increment 3 Tasks:
+---
+* use HTTPS on API - remove IP range/firewall
+* app notifications
+* web dashboard:
+  -> enable/disable accounts
+  -> view usage logs/analytics
+  -> send custom notifications
+  -> control adobe data refresh/poll frequency
+* persist data on device for offline viewing?
+* submit to app/play store
 
 ### Screens:
 ---
@@ -45,8 +65,6 @@ Early Reporting Information Centre
 
 ### Assets:
 ---
-1. Create splash Screens
-2. Create Icons
 
 ### API: (email form is signup form and pin is login form)
 1. /signup (send email address and device information)
@@ -57,12 +75,12 @@ Early Reporting Information Centre
 
 #### On exit app
 1. Logout
-2. Persist reducer state
+2. Persist reducer state (email address for now)
 #### On enter app
 1. load state from Async storage (email address)
-2. Have I successfully logged in with email address/PIN?
-  YES --> show PIN entry screen (option to goto email entry form)
-  NO --> show email entry screen
+2. Do i have persisted email address?
+  YES -> show PIN entry screen (can goto email entry form via link)
+  NO -> show email entry screen
 
 ## No Internet connection
 1. display appropriate message on Summary screen
@@ -71,11 +89,11 @@ Early Reporting Information Centre
 ## Backlog
 
 1. 3 pin entry failure then account is locked
-* if account is real account create page to show
 * expander accordian
 * nav bar header with parallax
 * swipeable screen (left makes you pop navigator)
 * Use PixelRatio for Images?
-* real data use HTTPS API?
 * Responsive text - bigger text for bigger devices
-* Use React Native Navigator Experimental
+* Other minor tech tasks
+  * add .eslintrc file
+  * use rnpm link for fonts
