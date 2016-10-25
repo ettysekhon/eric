@@ -17,14 +17,14 @@ Early Reporting Information Centre
 * create icons (all sizes) [DONE]
 * validate app and upload [DONE]
 * submit to testflight [DONE]
-* test ipad
-* create API (returning dummy data)
-* wire up API calls
+* create API (returning dummy data) [DONE]
 * send device data on API calls (for logging)
+* persist signup/email address on device (so user does not have to re-enter)
+* wire up API calls
+* add loading spinners
 * security logging/analytics
 * create offline handling
 * add signup link on login screen
-* persist signup/email address on device (so user does not have to re-enter)
 * responsive text/orientation handling (see signup screen)
 * update final screen shots and descriptions for app store listing
 * update android assets
@@ -41,6 +41,7 @@ Early Reporting Information Centre
 * use real API data
 * use IP range/firewall (to restrict usage/add security)
 * use fixed accounts
+* add JWT
 * add top 10 data sets
 * lock account on n failed login attempts
 * submit to app/play store
@@ -56,6 +57,13 @@ Early Reporting Information Centre
   -> control adobe data refresh/poll frequency
 * persist data on device for offline viewing?
 * submit to app/play store
+
+### Any other features:
+---
+* nav bar header with parallax
+* swipeable screen (left makes you pop navigator)
+* Use PixelRatio for Images?
+* Responsive text - bigger text for bigger devices
 
 ### Screens:
 ---
@@ -88,12 +96,6 @@ Early Reporting Information Centre
 
 ## Backlog
 
-1. 3 pin entry failure then account is locked
-* expander accordian
-* nav bar header with parallax
-* swipeable screen (left makes you pop navigator)
-* Use PixelRatio for Images?
-* Responsive text - bigger text for bigger devices
 * Other minor tech tasks
   * add .eslintrc file
   * use rnpm link for fonts
