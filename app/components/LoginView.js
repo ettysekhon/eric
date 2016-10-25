@@ -58,7 +58,7 @@ class LoginView extends Component {
               value={this.state.text}
             />
             <ButtonEric
-              isDisabled={!this.state.canSubmit}
+              isDisabled={!this.state.canSubmit || this.props.isLoading}
               isLoading={this.props.isLoading}
               onPress={() => {
                 /* eslint-disable react/no-set-state */

@@ -27,6 +27,15 @@ import {
 const TControl = FormControl(EmailTextInput);
 /* eslint-enable new-cap */
 
+const validateEmail = (emailAddress) => {
+  /* eslint-disable max-len */
+  const emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  /* eslint-enable max-len */
+  const validEmail = emailAddress === '' || emailRegEx.test(emailAddress);
+  const isEmpty = emailAddress === '';
+  return !(isEmpty || !validEmail);
+};
+
 class SignupView extends Component {
   constructor(props) {
     super(props);
@@ -45,13 +54,8 @@ class SignupView extends Component {
                 if (this.props.isLoading) {
                   return;
                 }
-                /* eslint-disable max-len */
-                const emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                /* eslint-enable max-len */
-                const state = { ...this.state, emailAddress: text };
-                const validEmail = state.emailAddress === '' || emailRegEx.test(state.emailAddress);
-                const isEmpty = state.emailAddress === '';
-                state.canSubmit = !(isEmpty || !validEmail);
+                const canSubmit = validateEmail(text);
+                const state = { ...this.state, emailAddress: text, canSubmit };
                 /* eslint-disable react/no-set-state */
                 this.setState(state);
                 /* eslint-enable react/no-set-state */
@@ -61,12 +65,9 @@ class SignupView extends Component {
               value={this.state.emailAddress}
             />
             <ButtonEric
-              isDisabled={!this.state.canSubmit}
+              isDisabled={!this.state.canSubmit || this.props.isLoading}
               isLoading={this.props.isLoading}
               onPress={() => {
-                /* eslint-disable react/no-set-state */
-                this.setState({ canSubmit: false });
-                /* eslint-enable react/no-set-state */
                 this.props.signUp(this.state.emailAddress, this.props.navigator);
               }}
             >
