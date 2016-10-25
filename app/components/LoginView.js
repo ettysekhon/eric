@@ -7,12 +7,17 @@ import {
   View
 } from 'react-native';
 
+import { connect } from 'react-redux';
+
 import BackgroundImage from './BackgroundImage';
 import styles from './Styles/SignupViewStyles';
 import Logo from './Logo';
 import FormControl from './FormControl';
 import ButtonEric from './ButtonEric';
-import routes from '../utils/routes';
+
+import {
+  login
+} from '../actions/auth';
 
 import {
   PasswordNumberTextInput
@@ -22,7 +27,7 @@ import {
 const TControl = FormControl(PasswordNumberTextInput);
 /* eslint-enable new-cap */
 
-class SignupView extends Component {
+class LoginView extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -37,14 +42,16 @@ class SignupView extends Component {
               autoFocus
               label={'ENTER PIN SENT TO YOU VIA EMAIL'}
               onChangeText={(text) => {
-                if (text.length > 4) {
+                if (text.length > 4 || this.props.isLoading) {
                   return;
                 }
+                /* eslint-disable react/no-set-state */
                 if (text.length === 4) {
                   this.setState({ text, canSubmit: true });
                 } else {
                   this.setState({ text, canSubmit: false });
                 }
+                /* eslint-enable react/no-set-state */
               }}
               placeholder={'enter your pin'}
               style={styles.formControl}
@@ -52,15 +59,12 @@ class SignupView extends Component {
             />
             <ButtonEric
               isDisabled={!this.state.canSubmit}
+              isLoading={this.props.isLoading}
               onPress={() => {
-                const { navigator } = this.props;
-                if (navigator) {
-                  requestAnimationFrame(() => {
-                    return navigator.push({
-                      route: routes.SUMMARY
-                    });
-                  });
-                }
+                /* eslint-disable react/no-set-state */
+                this.setState({ canSubmit: false });
+                /* eslint-enable react/no-set-state */
+                this.props.login(this.state.pinCode, this.props.navigator);
               }}
             >
               {'SUBMIT'}
@@ -72,12 +76,25 @@ class SignupView extends Component {
   }
 }
 
-SignupView.displayName = 'SignupView';
+LoginView.displayName = 'LoginView';
 
-SignupView.propTypes = {
+LoginView.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  login: PropTypes.func,
   /* eslint-disable react/forbid-prop-types */
-  navigator: PropTypes.object.isRequired
+  navigator: PropTypes.object.isRequired,
   /* eslint-enable react/forbid-prop-types */
 };
 
-export default SignupView;
+export default connect((state, ownProps) => {
+  return {
+    isLoading: state.auth.isLoading,
+    navigator: ownProps.navigator,
+  };
+}, (dispatch) => {
+  return {
+    login: (pinCode, navigator) => {
+      dispatch(login(pinCode, navigator));
+    }
+  };
+})(LoginView);

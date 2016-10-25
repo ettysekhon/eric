@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 
 import {
-  ActivityIndicatorIOS,
+  ActivityIndicator,
   Platform,
   ProgressBarAndroid,
   StyleSheet,
@@ -36,7 +36,7 @@ class Button extends Component {
   renderInnerTextiOS() {
     if (this.props.isLoading) {
       return (
-        <ActivityIndicatorIOS
+        <ActivityIndicator
           animating
           color={this.props.activityIndicatorColor || 'black'}
           size={'small'}
