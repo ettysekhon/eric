@@ -92,7 +92,7 @@ class AppNavigator extends Component {
           return Navigator.SceneConfigs.PushFromRight;
         }}
         initialRoute={{
-          route: routes.SUMMARY
+          route: routes.SIGNUP
         }}
         ref={(c) => { this.navigator = c; }}
         renderScene={renderRoute}
