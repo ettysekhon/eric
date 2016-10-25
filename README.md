@@ -20,10 +20,12 @@ Early Reporting Information Centre
 * create API (returning dummy data) [DONE]
 * send device data on API calls (for logging)
 * persist signup/email address on device (so user does not have to re-enter)
-* wire up API calls
-* add loading spinners
-* security logging/analytics
-* create offline handling
+* wire up API calls [DONE]
+* handle signup/login errors from API [DONE]
+* handle summary error from API [DONE]
+* add loading spinners [DONE]
+* security logging/analytics [DONE]
+* create offline handling [DONE]
 * add signup link on login screen
 * responsive text/orientation handling (see signup screen)
 * update final screen shots and descriptions for app store listing

@@ -1,13 +1,10 @@
 import {
-  Dimensions,
   StyleSheet,
 } from 'react-native';
 
 import {
   normalize
 } from '../../utils/size';
-
-import { Colors } from '../../theme/';
 
 export default StyleSheet.create({
   row: {
@@ -29,7 +26,7 @@ export default StyleSheet.create({
     marginLeft: normalize(-15),
     marginRight: normalize(-15),
     elevation: 2,
-    shadowColor: "#000000",
+    shadowColor: '#000000',
     shadowOpacity: 0.1,
     shadowOffset: {
       height: 10,

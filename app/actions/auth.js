@@ -1,3 +1,7 @@
+import {
+  Alert
+} from 'react-native';
+
 import ActionTypes from './types';
 import createAction from './createAction';
 import API from '../api';
@@ -28,6 +32,18 @@ export const signUp = (emailAddress, navigator) => {
       }));
     }).catch((err) => {
       dispatch(signUpFailure(null, err));
+      Alert.alert(
+        'Howdy!',
+        'Looks like we have an issue signing you up. Please connect to the internet and try again.',
+        [
+          {
+            text: 'OK',
+            onPress: () => {
+              return console.log('OK Pressed!');
+            }
+          }
+        ]
+      );
     });
   };
 };
@@ -47,6 +63,18 @@ export const login = (pinCode, navigator) => {
       dispatch(loginSuccess());
     }).catch((err) => {
       dispatch(loginFailure(null, err));
+      Alert.alert(
+        'Howdy!',
+        'Looks like we have an issue logging you in. Please connect to the internet and try again.',
+        [
+          {
+            text: 'OK',
+            onPress: () => {
+              return console.log('OK Pressed!');
+            }
+          }
+        ]
+      );
     });
   };
 };
