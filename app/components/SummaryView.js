@@ -3,26 +3,14 @@ import React, {
   PropTypes
 } from 'react';
 
-import {
-  View
-} from 'react-native';
-
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
-
 import { connect } from 'react-redux';
-
-import {
-  Heading3,
-} from './Text';
 
 import SummaryCard from './SummaryCard';
 import Content from './Content';
 import Container from './Container';
 import Header from './Header';
 import ModalSpinner from './ModalSpinner';
-import ButtonEric from './ButtonEric';
-import { Colors } from '../theme/';
-
+import MessageView from './MessageView';
 import getSummary from '../actions/summary';
 
 class SummaryView extends Component {
@@ -36,40 +24,19 @@ class SummaryView extends Component {
 
     const content = error
       ? (
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: 10
+      <MessageView
+        buttonIsDisabled={this.props.isLoading}
+        buttonIsLoading={this.props.isLoading}
+        buttonOnPress={() => {
+          /* eslint-disable react/no-set-state */
+          this.setState({ canSubmit: false });
+          /* eslint-enable react/no-set-state */
+          this.props.getSummary();
         }}
-      >
-        <EvilIcons
-          color={Colors.primary}
-          name={'refresh'}
-          size={90}
-          style={{
-            marginTop: -100
-          }}
-        />
-        <Heading3
-          style={{
-            paddingBottom: 20
-          }}
-        >{errorMessage}</Heading3>
-        <ButtonEric
-          isDisabled={this.props.isLoading}
-          isLoading={this.props.isLoading}
-          onPress={() => {
-            /* eslint-disable react/no-set-state */
-            this.setState({ canSubmit: false });
-            /* eslint-enable react/no-set-state */
-            this.props.getSummary();
-          }}
-        >
-          {'RETRY'}
-        </ButtonEric>
-      </View>
+        buttonText={'RETRY'}
+        icon={'refresh'}
+        message={errorMessage}
+      />
     ) : (<Content>{data.map((card, index) => {
       return (
         <SummaryCard
