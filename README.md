@@ -18,7 +18,7 @@ Early Reporting Information Centre
 * validate app and upload [DONE]
 * submit to testflight [DONE]
 * create API (returning dummy data) [DONE]
-* send device data on API calls (for logging)
+* send device data on API calls (for logging) [DONE]
 * wire up API calls [DONE]
 * handle signup/login errors from API [DONE]
 * handle summary error from API [DONE]
