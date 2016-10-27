@@ -19,34 +19,37 @@ Early Reporting Information Centre
 * submit to testflight [DONE]
 * create API (returning dummy data) [DONE]
 * send device data on API calls (for logging)
-* persist signup/email address on device (so user does not have to re-enter)
 * wire up API calls [DONE]
 * handle signup/login errors from API [DONE]
 * handle summary error from API [DONE]
 * add loading spinners [DONE]
 * security logging/analytics [DONE]
 * create offline handling [DONE]
-* add signup link on login screen
+* persist signup/email address on device (so user does not have to re-enter)
 * responsive text/orientation handling (see signup screen)
-* update final screen shots and descriptions for app store listing
-* update android assets
-* test on android
-* submit to play store
+* add signup link on login screen
 
 ### Increment 1 or 2 Tasks:
 ---
 * update landscape view to include additional columns
-* accordian/expander to hide data
-
-### Increment 2 Tasks:
----
-* use real API data
+* accordian/expander to hide data [https://github.com/naoufal/react-native-accordion]
+[https://github.com/oblador/react-native-collapsible]
 * use IP range/firewall (to restrict usage/add security)
+* IP security testing
 * use fixed accounts
 * add JWT
-* add top 10 data sets
 * lock account on n failed login attempts
-* submit to app/play store
+* create test credentials to return test data for app store testers
+* update final screen shots and descriptions for app store listing
+* submit to app store
+* update android assets
+* test on android
+* submit to play store
+
+### Increment 2 Tasks (no app store deployment required):
+---
+* use real API data (summary)
+* use real API data (top 10)
 
 ### Increment 3 Tasks:
 ---
