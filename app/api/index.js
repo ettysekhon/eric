@@ -3,7 +3,7 @@ import device from '../utils/device';
 // http://stackoverflow.com/questions/38077273/react-native-fect-network-request-failed-not-using-localhost
 
 const getEndpoint = (path) => {
-  const host = 'http://eric.kicks-ass.org/api/';
+  const host = 'http://localhost:8082/api/';
   return `${host}${path}`;
 };
 
@@ -31,6 +31,7 @@ const getPayload = (json) => {
     : json.payload;
 };
 
+/* eslint-disable no-unused-vars */
 const get = (url) => {
   return new Promise((resolve, reject) => {
     fetch(url, {
@@ -53,9 +54,9 @@ const get = (url) => {
     });
   });
 };
+/* eslint-enable no-unused-vars */
 
 const post = (url, body) => {
-  // const { auth } = store.getState();
   return new Promise((resolve, reject) => {
     fetch(url, {
       method: 'POST',
@@ -63,7 +64,6 @@ const post = (url, body) => {
       credentials: 'include',
       headers: {
         Accept: 'application/json',
-        // Authorization: auth.token,
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest'
       },
@@ -84,47 +84,23 @@ const post = (url, body) => {
   });
 };
 
-const signUp = (emailAddress) => {
-  return new Promise((resolve, reject) => {
-    post(getEndpoint('signup'), {
-      emailAddress
-    })
-    .then((response) => {
-      resolve();
-    })
-    .catch((err) => {
-      console.log('error getting products', err);
-      reject(err);
-    });
+const signUp = (emailAddress, token) => {
+  return post(getEndpoint('signup'), {
+    emailAddress,
+    token
   });
 };
 
-const login = (pinCode) => {
-  return new Promise((resolve, reject) => {
-    post(getEndpoint('signup'), {
-      pinCode
-    })
-    .then((response) => {
-      resolve();
-    })
-    .catch((err) => {
-      console.log('error getting products', err);
-      reject(err);
-    });
+const login = (password, token) => {
+  return post(getEndpoint('login'), {
+    password,
+    token
   });
 };
 
-const getSummary = () => {
-  return new Promise((resolve, reject) => {
-    get(getEndpoint('summary'))
-      .then((response) => {
-        const summary = response.summary;
-        resolve(summary);
-      })
-      .catch((err) => {
-        console.log('error getting summary', err);
-        reject(err);
-      });
+const getSummary = (token) => {
+  return post(getEndpoint('summary'), {
+    token
   });
 };
 

@@ -4,7 +4,8 @@ import ActionTypes from '../actions/types';
 const blankState = {
   isLoading: false,
   emailAddress: '',
-  loggedIn: false
+  loggedIn: false,
+  token: ''
 };
 
 const reducer = (state = blankState, action) => {
@@ -14,12 +15,19 @@ const reducer = (state = blankState, action) => {
   case ActionTypes.SIGNUP_FAILURE:
     return blankState;
   case ActionTypes.SIGNUP_SUCCESS:
-    return { ...blankState, emailAddress: action.payload.emailAddress };
+    return { ...blankState,
+      emailAddress: action.payload.emailAddress,
+      token: action.payload.token };
   case ActionTypes.LOGIN_REQUEST:
-    return { ...state, isLoading: true, loggedIn: false };
+    return { ...state, isLoading: true, loggedIn: false, token: '' };
   case ActionTypes.LOGIN_FAILURE:
-    return { ...state, isLoading: false, loggedIn: false };
+    return { ...state, isLoading: false, loggedIn: false, token: '' };
   case ActionTypes.LOGIN_SUCCESS:
+    return { ...state,
+      isLoading: false,
+      loggedIn: true,
+      token: action.payload.token };
+  case ActionTypes.UPDATE_TOKEN:
     return { ...state, isLoading: false, loggedIn: true };
   default:
     return state;

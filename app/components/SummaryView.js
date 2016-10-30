@@ -24,19 +24,19 @@ class SummaryView extends Component {
 
     const content = error
       ? (
-      <MessageView
-        buttonIsDisabled={this.props.isLoading}
-        buttonIsLoading={this.props.isLoading}
-        buttonOnPress={() => {
-          /* eslint-disable react/no-set-state */
-          this.setState({ canSubmit: false });
-          /* eslint-enable react/no-set-state */
-          this.props.getSummary();
-        }}
-        buttonText={'RETRY'}
-        icon={'refresh'}
-        message={errorMessage}
-      />
+        <MessageView
+          buttonIsDisabled={this.props.isLoading}
+          buttonIsLoading={this.props.isLoading}
+          buttonOnPress={() => {
+            /* eslint-disable react/no-set-state */
+            this.setState({ canSubmit: false });
+            /* eslint-enable react/no-set-state */
+            this.props.getSummary();
+          }}
+          buttonText={'RETRY'}
+          icon={'refresh'}
+          message={errorMessage}
+        />
     ) : (<Content>{data.map((card, index) => {
       return (
         <SummaryCard

@@ -48,7 +48,6 @@ class SignupView extends Component {
           <Logo />
           <View style={styles.form}>
             <TControl
-              autoFocus
               label={'ACCOUNT EMAIL'}
               onChangeText={(text) => {
                 if (this.props.isLoading) {

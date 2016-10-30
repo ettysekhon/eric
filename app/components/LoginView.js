@@ -30,7 +30,7 @@ const TControl = FormControl(PasswordNumberTextInput);
 class LoginView extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = { text: '', canSubmit: false };
   }
   render() {
     return (
@@ -39,7 +39,6 @@ class LoginView extends Component {
           <Logo />
           <View style={styles.form}>
             <TControl
-              autoFocus
               label={'ENTER PIN SENT TO YOU VIA EMAIL'}
               onChangeText={(text) => {
                 if (text.length > 4 || this.props.isLoading) {
@@ -64,7 +63,7 @@ class LoginView extends Component {
                 /* eslint-disable react/no-set-state */
                 this.setState({ canSubmit: false });
                 /* eslint-enable react/no-set-state */
-                this.props.login(this.state.pinCode, this.props.navigator);
+                this.props.login(this.state.text, this.props.navigator);
               }}
             >
               {'SUBMIT'}
@@ -93,8 +92,8 @@ export default connect((state, ownProps) => {
   };
 }, (dispatch) => {
   return {
-    login: (pinCode, navigator) => {
-      dispatch(login(pinCode, navigator));
+    login: (password, navigator) => {
+      dispatch(login(password, navigator));
     }
   };
 })(LoginView);

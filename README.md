@@ -25,21 +25,53 @@ Early Reporting Information Centre
 * add loading spinners [DONE]
 * security logging/analytics [DONE]
 * create offline handling [DONE]
-* persist signup/email address on device (so user does not have to re-enter)
-* responsive text/orientation handling (see signup screen)
+
+FRIDAY:
+-------
+* JWT
+* create test credentials to return test data for app store testers:
+
+  1. on startup loadDeviceToken
+    a) do i have a device token?
+      Y => show login screen
+      N => show signup screen
+
+  2. onSignup call api/signup and return a device token [SAVE DEVICE TOKEN]
+      request: { emailAddress: '', device: {} }
+      response: { emailAddress: '', deviceToken: {} }
+
+      SAVE THE DEVICE ID!
+
+  3. onLogin  call api/login and return a session token [SAVE SESSION TOKEN]
+      request: { pinCode: '', device: {} }
+      response: { sessionToken: '', device: {} }
+      response: error {
+        message: ['invalid PIN code', 'account locked']
+      }
+
+* use fixed accounts setup test account:
+{
+  emailAddress: 'eric@blackfriday.com'
+  pinCode: '2511'
+}
+
+* summary view => authenticate credentials api/summary request
+    on fail => do we have email address? then show login view otherwise signup view
+
+* on app exit => always log user out!
+  https://facebook.github.io/react-native/docs/appstate.html
+
 * add signup link on login screen
+* persist signup/email address on device (so user does not have to re-enter)
+
 
 ### Increment 1 or 2 Tasks:
 ---
+* create tab view
+* responsive text/orientation handling (see signup screen)
 * update landscape view to include additional columns
-* accordian/expander to hide data [https://github.com/naoufal/react-native-accordion]
+* accordian/expander to hide data               [https://github.com/naoufal/react-native-accordion]
 [https://github.com/oblador/react-native-collapsible]
-* use IP range/firewall (to restrict usage/add security)
-* IP security testing
-* use fixed accounts
-* add JWT
-* lock account on n failed login attempts
-* create test credentials to return test data for app store testers
 * update final screen shots and descriptions for app store listing
 * submit to app store
 * update android assets
@@ -48,6 +80,8 @@ Early Reporting Information Centre
 
 ### Increment 2 Tasks (no app store deployment required):
 ---
+* use IP range/firewall (to restrict usage/add security)
+* IP security testing
 * use real API data (summary)
 * use real API data (top 10)
 
@@ -60,6 +94,7 @@ Early Reporting Information Centre
   -> view usage logs/analytics
   -> send custom notifications
   -> control adobe data refresh/poll frequency
+* lock account on n failed login attempts
 * persist data on device for offline viewing?
 * submit to app/play store
 
@@ -67,6 +102,9 @@ Early Reporting Information Centre
 ---
 * nav bar header with parallax
 * swipeable screen (left makes you pop navigator)
+* Add animations
+  * signup/login buttons on failure
+  * summary entrance animation
 * Use PixelRatio for Images?
 * Responsive text - bigger text for bigger devices
 

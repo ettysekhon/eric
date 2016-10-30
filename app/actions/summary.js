@@ -7,9 +7,10 @@ const summarySuccess = createAction(ActionTypes.SUMMARY_SUCCESS);
 const summaryFailure = createAction(ActionTypes.SUMMARY_FAILURE);
 
 const getSummary = (emailAddress) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const { auth } = getState();
     dispatch(summaryRequest());
-    API.getSummary()
+    API.getSummary(auth.token)
     .then((payload) => {
       dispatch(summarySuccess(payload));
     }).catch((err) => {

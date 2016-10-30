@@ -41,16 +41,16 @@ const HeaderCell = ({ cell, up }) => {
 const Cell = ({ cell, isHeader, up, style }) => {
   const cellContent = isHeader
     ? (
-    <HeaderCell
-      cell={cell}
-      up={up}
-    />)
+      <HeaderCell
+        cell={cell}
+        up={up}
+      />)
     : (
-    <Heading4>
-      {
-        cell
-      }
-    </Heading4>
+      <Heading4>
+        {
+          cell
+        }
+      </Heading4>
     );
   return (
     <View style={[styles.cell, style]}>

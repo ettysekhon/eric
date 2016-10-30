@@ -16,9 +16,10 @@ const loginSuccess = createAction(ActionTypes.LOGIN_SUCCESS);
 const loginFailure = createAction(ActionTypes.LOGIN_FAILURE);
 
 export const signUp = (emailAddress, navigator) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const { auth } = getState();
     dispatch(signUpRequest());
-    API.signUp(emailAddress)
+    API.signUp(emailAddress, auth.token)
     .then((payload) => {
       if (navigator) {
         requestAnimationFrame(() => {
@@ -28,7 +29,8 @@ export const signUp = (emailAddress, navigator) => {
         });
       }
       dispatch(signUpSuccess({
-        emailAddress
+        emailAddress,
+        token: payload.token
       }));
     }).catch((err) => {
       dispatch(signUpFailure(null, err));
@@ -48,10 +50,11 @@ export const signUp = (emailAddress, navigator) => {
   };
 };
 
-export const login = (pinCode, navigator) => {
-  return (dispatch) => {
+export const login = (password, navigator) => {
+  return (dispatch, getState) => {
+    const { auth } = getState();
     dispatch(loginRequest());
-    API.signUp(pinCode)
+    API.login(password, auth.token)
     .then((payload) => {
       if (navigator) {
         requestAnimationFrame(() => {
@@ -60,7 +63,9 @@ export const login = (pinCode, navigator) => {
           });
         });
       }
-      dispatch(loginSuccess());
+      dispatch(loginSuccess({
+        token: payload.token
+      }));
     }).catch((err) => {
       dispatch(loginFailure(null, err));
       Alert.alert(
