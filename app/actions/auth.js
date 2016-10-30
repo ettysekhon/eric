@@ -35,8 +35,8 @@ export const signUp = (emailAddress, navigator) => {
     }).catch((err) => {
       dispatch(signUpFailure(null, err));
       Alert.alert(
-        'Howdy!',
-        'Looks like we have an issue signing you up. Please connect to the internet and try again.',
+        'Error',
+        'Looks like we have an issue signing you up. Please try again.',
         [
           {
             text: 'OK',
@@ -69,8 +69,8 @@ export const login = (password, navigator) => {
     }).catch((err) => {
       dispatch(loginFailure(null, err));
       Alert.alert(
-        'Howdy!',
-        'Looks like we have an issue logging you in. Please connect to the internet and try again.',
+        'Error',
+        'Looks like we have an issue logging you in. Please try again.',
         [
           {
             text: 'OK',

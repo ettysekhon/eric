@@ -2,6 +2,7 @@ import ActionTypes from '../actions/types';
 
 // TODO: persist account on email success!
 const blankState = {
+  error: false,
   isLoading: false,
   emailAddress: '',
   loggedIn: false,
@@ -11,24 +12,22 @@ const blankState = {
 const reducer = (state = blankState, action) => {
   switch (action.type) {
   case ActionTypes.SIGNUP_REQUEST:
-    return { ...blankState, isLoading: true };
+    return { ...blankState, isLoading: true, error: false };
   case ActionTypes.SIGNUP_FAILURE:
-    return blankState;
+    return { ...blankState, error: false };
   case ActionTypes.SIGNUP_SUCCESS:
     return { ...blankState,
       emailAddress: action.payload.emailAddress,
       token: action.payload.token };
   case ActionTypes.LOGIN_REQUEST:
-    return { ...state, isLoading: true, loggedIn: false, token: '' };
+    return { ...state, isLoading: true, loggedIn: false, token: '', error: false };
   case ActionTypes.LOGIN_FAILURE:
-    return { ...state, isLoading: false, loggedIn: false, token: '' };
+    return { ...state, isLoading: false, loggedIn: false, token: '', error: true };
   case ActionTypes.LOGIN_SUCCESS:
     return { ...state,
       isLoading: false,
       loggedIn: true,
       token: action.payload.token };
-  case ActionTypes.UPDATE_TOKEN:
-    return { ...state, isLoading: false, loggedIn: true };
   default:
     return state;
   }

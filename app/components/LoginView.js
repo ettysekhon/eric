@@ -4,16 +4,19 @@ import React, {
 } from 'react';
 
 import {
+  Text,
   View
 } from 'react-native';
 
 import { connect } from 'react-redux';
 
 import BackgroundImage from './BackgroundImage';
+import LinkObject from './LinkObject';
 import styles from './Styles/SignupViewStyles';
 import Logo from './Logo';
 import FormControl from './FormControl';
 import ButtonEric from './ButtonEric';
+import routes from '../utils/routes';
 
 import {
   login
@@ -22,6 +25,10 @@ import {
 import {
   PasswordNumberTextInput
 } from './TextInput';
+
+import {
+  TextMedium
+} from './Text';
 
 /* eslint-disable new-cap */
 const TControl = FormControl(PasswordNumberTextInput);
@@ -33,13 +40,20 @@ class LoginView extends Component {
     this.state = { text: '', canSubmit: false };
   }
   render() {
+    const error = this.props.error
+      ? (
+        <TextMedium
+          style={styles.warningText}
+        >{'AN ERROR OCCURRED - TRY A NEW PIN'}</TextMedium>
+      )
+      : null;
     return (
       <BackgroundImage>
         <View style={styles.content}>
           <Logo />
           <View style={styles.form}>
             <TControl
-              label={'ENTER PIN SENT TO YOU VIA EMAIL'}
+              label={'ENTER THE PIN WE ASSIGNED FOR YOU'}
               onChangeText={(text) => {
                 if (text.length > 4 || this.props.isLoading) {
                   return;
@@ -68,6 +82,25 @@ class LoginView extends Component {
             >
               {'SUBMIT'}
             </ButtonEric>
+            {
+              error
+            }
+            <LinkObject
+              onPress={() => {
+                const { navigator } = this.props;
+                if (navigator) {
+                  requestAnimationFrame(() => {
+                    return navigator.push({
+                      route: routes.SIGNUP
+                    });
+                  });
+                }
+              }}
+            >
+              <Text
+                style={styles.link}
+              >GO BACK TO SIGNUP</Text>
+            </LinkObject>
           </View>
         </View>
       </BackgroundImage>
@@ -78,6 +111,7 @@ class LoginView extends Component {
 LoginView.displayName = 'LoginView';
 
 LoginView.propTypes = {
+  error: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   login: PropTypes.func,
   /* eslint-disable react/forbid-prop-types */
@@ -87,6 +121,7 @@ LoginView.propTypes = {
 
 export default connect((state, ownProps) => {
   return {
+    error: state.auth.error,
     isLoading: state.auth.isLoading,
     navigator: ownProps.navigator,
   };
