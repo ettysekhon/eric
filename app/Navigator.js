@@ -18,7 +18,6 @@ import { Colors } from './theme/';
 
 // TODO: refactor navigator
 const renderRoute = (route, navigator) => {
-  console.log('route', route);
   switch (route.route) {
   case routes.LOGIN:
     return (
