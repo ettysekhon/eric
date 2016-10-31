@@ -14,20 +14,18 @@ export default StyleSheet.create({
     paddingTop: 50,
     paddingHorizontal: normalize(25),
   },
-  form: {
-    paddingTop: 50,
-  },
   formControl: {
     marginBottom: 10
   },
   link: {
-    color: Colors.primary,
+    color: Colors.grayLight,
     letterSpacing: normalize(3),
     marginBottom: 10,
     alignSelf: 'center'
   },
   warningText: {
-    color: 'red',
+    color: Colors.warning,
     alignSelf: 'center',
+    marginBottom: 5,
   }
 });

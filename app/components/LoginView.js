@@ -8,6 +8,8 @@ import {
   View
 } from 'react-native';
 
+import Orientation from 'react-native-orientation';
+
 import { connect } from 'react-redux';
 
 import BackgroundImage from './BackgroundImage';
@@ -37,20 +39,39 @@ const TControl = FormControl(PasswordNumberTextInput);
 class LoginView extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: '', canSubmit: false };
+    this.state = { text: '', canSubmit: false, orientation: 'PORTRAIT' };
+    this.updateOrientation = this.updateOrientation.bind(this);
+  }
+  componentDidMount() {
+    Orientation.addOrientationListener(this.updateOrientation);
+  }
+  componentDidUnMount() {
+    Orientation.removeOrientationListener(this.updateOrientation);
+  }
+  updateOrientation(orientation) {
+    /* eslint-disable react/no-set-state */
+    this.setState({
+      orientation
+    });
+    /* eslint-enable react/no-set-state */
   }
   render() {
     const error = this.props.error
       ? (
         <TextMedium
           style={styles.warningText}
-        >{'AN ERROR OCCURRED - TRY A NEW PIN'}</TextMedium>
+        >{'ERROR: RE-ENTER PIN'}</TextMedium>
       )
+      : null;
+    const logo = this.state.orientation === 'PORTRAIT'
+      ? (<Logo />)
       : null;
     return (
       <BackgroundImage>
         <View style={styles.content}>
-          <Logo />
+          {
+            logo
+          }
           <View style={styles.form}>
             <TControl
               label={'ENTER THE PIN WE ASSIGNED FOR YOU'}

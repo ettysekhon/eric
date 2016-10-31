@@ -11,7 +11,8 @@ const colors = {
   primaryGradientEnd: '#C86DD7',
   secondaryGradientStart: '#AD6BFF',
   secondaryGradientEnd: '#74BCF7',
-  clear: 'rgba(0,0,0,0)'
+  clear: 'rgba(0,0,0,0)',
+  warning: '#ad2004'
 };
 
 export default colors;

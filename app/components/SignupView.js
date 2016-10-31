@@ -7,6 +7,8 @@ import {
   View
 } from 'react-native';
 
+import Orientation from 'react-native-orientation';
+
 import { connect } from 'react-redux';
 
 import BackgroundImage from './BackgroundImage';
@@ -39,14 +41,33 @@ const validateEmail = (emailAddress) => {
 class SignupView extends Component {
   constructor(props) {
     super(props);
-    this.state = { emailAddress: '', canSubmit: false };
+    this.state = { emailAddress: '', canSubmit: false, orientation: 'PORTRAIT' };
+    this.updateOrientation = this.updateOrientation.bind(this);
+  }
+  componentDidMount() {
+    Orientation.addOrientationListener(this.updateOrientation);
+  }
+  componentDidUnMount() {
+    Orientation.removeOrientationListener(this.updateOrientation);
+  }
+  updateOrientation(orientation) {
+    /* eslint-disable react/no-set-state */
+    this.setState({
+      orientation
+    });
+    /* eslint-enable react/no-set-state */
   }
   render() {
+    const logo = this.state.orientation === 'PORTRAIT'
+      ? (<Logo />)
+      : null;
     return (
       <BackgroundImage>
         <View style={styles.content}>
-          <Logo />
-          <View style={styles.form}>
+          {
+            logo
+          }
+          <View>
             <TControl
               label={'ACCOUNT EMAIL'}
               onChangeText={(text) => {
