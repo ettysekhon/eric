@@ -7,7 +7,7 @@ import {
   View
 } from 'react-native';
 
-import Orientation from 'react-native-orientation';
+// import Orientation from 'react-native-orientation';
 
 import { connect } from 'react-redux';
 
@@ -41,33 +41,24 @@ const validateEmail = (emailAddress) => {
 class SignupView extends Component {
   constructor(props) {
     super(props);
-    this.state = { emailAddress: '', canSubmit: false, orientation: 'PORTRAIT' };
-    this.updateOrientation = this.updateOrientation.bind(this);
-  }
-  componentDidMount() {
-    Orientation.addOrientationListener(this.updateOrientation);
-  }
-  componentDidUnMount() {
-    Orientation.removeOrientationListener(this.updateOrientation);
-  }
-  updateOrientation(orientation) {
-    /* eslint-disable react/no-set-state */
-    this.setState({
-      orientation
-    });
-    /* eslint-enable react/no-set-state */
+    this.state = { emailAddress: this.props.emailAddress, canSubmit: false };
   }
   render() {
-    const logo = this.state.orientation === 'PORTRAIT'
-      ? (<Logo />)
-      : null;
+    let logo = null;
+    let formStyle = {};
+    if (this.props.orientation === 'PORTRAIT') {
+      logo = (<Logo />);
+      formStyle = {
+        marginTop: 50
+      };
+    }
     return (
       <BackgroundImage>
         <View style={styles.content}>
           {
             logo
           }
-          <View>
+          <View style={formStyle}>
             <TControl
               label={'ACCOUNT EMAIL'}
               onChangeText={(text) => {
@@ -103,19 +94,25 @@ class SignupView extends Component {
 SignupView.displayName = 'SignupView';
 
 SignupView.propTypes = {
+  emailAddress: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
   /* eslint-disable react/forbid-prop-types */
   navigator: PropTypes.object.isRequired,
   /* eslint-enable react/forbid-prop-types */
+  orientation: PropTypes.string,
   signUp: PropTypes.func,
 };
 
-export default connect((state, ownProps) => {
+const select = (state, ownProps) => {
   return {
+    emailAddress: state.auth.emailAddress,
     isLoading: state.auth.isLoading,
     navigator: ownProps.navigator,
+    orientation: state.orientation.orientation
   };
-}, (dispatch) => {
+};
+
+export default connect(select, (dispatch) => {
   return {
     signUp: (emailAddress, navigator) => {
       dispatch(signUp(emailAddress, navigator));

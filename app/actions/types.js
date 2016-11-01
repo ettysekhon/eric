@@ -13,6 +13,7 @@ module.exports = {
   SUMMARY_SUCCESS: 'SUMMARY_SUCCESS',
   // SYNC.
   // -------------------------------------------------------------------------->
-  LOGOUT: 'LOGOUT'
+  LOGOUT: 'LOGOUT',
+  ORIENTATION_CHANGE: 'ORIENTATION_CHANGE'
   // -------------------------------------------------------------------------->
 };

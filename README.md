@@ -25,68 +25,37 @@ Early Reporting Information Centre
 * add loading spinners [DONE]
 * security logging/analytics [DONE]
 * create offline handling [DONE]
-
-FRIDAY:
--------
-* JWT
-* create test credentials to return test data for app store testers:
-
-  1. on startup loadDeviceToken
-    a) do i have a device token?
-      Y => show login screen
-      N => show signup screen
-
-  2. onSignup call api/signup and return a device token [SAVE DEVICE TOKEN]
-      request: { emailAddress: '', device: {} }
-      response: { emailAddress: '', deviceToken: {} }
-
-      SAVE THE DEVICE ID!
-
-  3. onLogin  call api/login and return a session token [SAVE SESSION TOKEN]
-      request: { pinCode: '', device: {} }
-      response: { sessionToken: '', device: {} }
-      response: error {
-        message: ['invalid PIN code', 'account locked']
-      }
-
-* use fixed accounts setup test account:
+* JWT [DONE]
+* create test credentials to return test data for app store testers [DONE]
+* use fixed accounts setup test account [DONE]
 {
   emailAddress: 'eric@blackfriday.com'
   pinCode: '2511'
 }
-
-* summary view => authenticate credentials api/summary request
-    on fail => do we have email address? then show login view otherwise signup view
-
-* on app exit => always log user out!
-  https://facebook.github.io/react-native/docs/appstate.html
-
-* add signup link on login screen
+* summary view => authenticate credentials api/summary request [DONE]
+* add signup link on login screen [DONE]
+* on app exit => always log user out! [DONE]
 * persist signup/email address on device (so user does not have to re-enter)
+    on startup loadDeviceToken - do i have a device token?
+      Y => show login screen
+      N => show signup screen
 
-
-### Increment 1 or 2 Tasks:
+### Increment 2 Tasks (no app store deployment required):
 ---
-* create tab view
-* responsive text/orientation handling (see signup screen)
-* update landscape view to include additional columns
-* accordian/expander to hide data               [https://github.com/naoufal/react-native-accordion]
-[https://github.com/oblador/react-native-collapsible]
+* use real API data (summary)
 * update final screen shots and descriptions for app store listing
 * submit to app store
 * update android assets
 * test on android
 * submit to play store
 
-### Increment 2 Tasks (no app store deployment required):
----
-* use IP range/firewall (to restrict usage/add security)
-* IP security testing
-* use real API data (summary)
-* use real API data (top 10)
-
 ### Increment 3 Tasks:
 ---
+* create tab view
+* update landscape view to include additional columns
+* responsive text/orientation handling (see signup screen) [50% complete]
+* accordian/expander to hide data
+* use real API data (top 10)
 * use HTTPS on API - remove IP range/firewall
 * app notifications
 * web dashboard:
@@ -108,8 +77,10 @@ FRIDAY:
 * Use PixelRatio for Images?
 * Responsive text - bigger text for bigger devices
 
-### Screens:
+### Not required:
 ---
+* use IP range/firewall (to restrict usage/add security)
+* IP security testing
 
 ### Components:
 ---

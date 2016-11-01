@@ -22,10 +22,5 @@ export default StyleSheet.create({
     letterSpacing: normalize(3),
     marginBottom: 10,
     alignSelf: 'center'
-  },
-  warningText: {
-    color: Colors.warning,
-    alignSelf: 'center',
-    marginBottom: 5,
   }
 });

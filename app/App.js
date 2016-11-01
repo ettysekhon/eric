@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import Navigator from './Navigator';
+import OrientationController from './components/OrientationController';
 
 const App = (props) => {
   return (
@@ -17,6 +18,7 @@ const App = (props) => {
         translucent
       />
       <Navigator />
+      <OrientationController />
     </View>
   );
 };

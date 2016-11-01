@@ -8,8 +8,6 @@ import {
   View
 } from 'react-native';
 
-import Orientation from 'react-native-orientation';
-
 import { connect } from 'react-redux';
 
 import BackgroundImage from './BackgroundImage';
@@ -28,10 +26,6 @@ import {
   PasswordNumberTextInput
 } from './TextInput';
 
-import {
-  TextMedium
-} from './Text';
-
 /* eslint-disable new-cap */
 const TControl = FormControl(PasswordNumberTextInput);
 /* eslint-enable new-cap */
@@ -39,42 +33,26 @@ const TControl = FormControl(PasswordNumberTextInput);
 class LoginView extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: '', canSubmit: false, orientation: 'PORTRAIT' };
-    this.updateOrientation = this.updateOrientation.bind(this);
-  }
-  componentDidMount() {
-    Orientation.addOrientationListener(this.updateOrientation);
-  }
-  componentDidUnMount() {
-    Orientation.removeOrientationListener(this.updateOrientation);
-  }
-  updateOrientation(orientation) {
-    /* eslint-disable react/no-set-state */
-    this.setState({
-      orientation
-    });
-    /* eslint-enable react/no-set-state */
+    this.state = { text: '', canSubmit: false };
   }
   render() {
-    const error = this.props.error
-      ? (
-        <TextMedium
-          style={styles.warningText}
-        >{'ERROR: RE-ENTER PIN'}</TextMedium>
-      )
-      : null;
-    const logo = this.state.orientation === 'PORTRAIT'
-      ? (<Logo />)
-      : null;
+    let logo = null;
+    let formStyle = {};
+    if (this.props.orientation === 'PORTRAIT') {
+      logo = (<Logo />);
+      formStyle = {
+        marginTop: 50
+      };
+    }
     return (
       <BackgroundImage>
         <View style={styles.content}>
           {
             logo
           }
-          <View style={styles.form}>
+          <View style={formStyle}>
             <TControl
-              label={'ENTER THE PIN WE ASSIGNED FOR YOU'}
+              label={'ENTER THE PIN WE SENT TO YOU'}
               onChangeText={(text) => {
                 if (text.length > 4 || this.props.isLoading) {
                   return;
@@ -103,9 +81,6 @@ class LoginView extends Component {
             >
               {'SUBMIT'}
             </ButtonEric>
-            {
-              error
-            }
             <LinkObject
               onPress={() => {
                 const { navigator } = this.props;
@@ -120,7 +95,7 @@ class LoginView extends Component {
             >
               <Text
                 style={styles.link}
-              >GO BACK TO SIGNUP</Text>
+              >SIGNUP</Text>
             </LinkObject>
           </View>
         </View>
@@ -132,21 +107,24 @@ class LoginView extends Component {
 LoginView.displayName = 'LoginView';
 
 LoginView.propTypes = {
-  error: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   login: PropTypes.func,
   /* eslint-disable react/forbid-prop-types */
   navigator: PropTypes.object.isRequired,
   /* eslint-enable react/forbid-prop-types */
+  orientation: PropTypes.string,
 };
 
-export default connect((state, ownProps) => {
+const select = (state, ownProps) => {
   return {
     error: state.auth.error,
     isLoading: state.auth.isLoading,
     navigator: ownProps.navigator,
+    orientation: state.orientation.orientation
   };
-}, (dispatch) => {
+};
+
+export default connect(select, (dispatch) => {
   return {
     login: (password, navigator) => {
       dispatch(login(password, navigator));

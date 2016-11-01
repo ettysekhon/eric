@@ -6,6 +6,7 @@ import ActionTypes from './types';
 import createAction from './createAction';
 import API from '../api';
 import routes from '../utils/routes';
+import { setItem } from '../utils/storage';
 
 const signUpRequest = createAction(ActionTypes.SIGNUP_REQUEST);
 const signUpSuccess = createAction(ActionTypes.SIGNUP_SUCCESS);
@@ -14,6 +15,10 @@ const signUpFailure = createAction(ActionTypes.SIGNUP_FAILURE);
 const loginRequest = createAction(ActionTypes.LOGIN_REQUEST);
 const loginSuccess = createAction(ActionTypes.LOGIN_SUCCESS);
 const loginFailure = createAction(ActionTypes.LOGIN_FAILURE);
+
+const saveEmailAddress = (emailAddress) => {
+  setItem('EMAIL_ADDRESS', emailAddress);
+};
 
 export const signUp = (emailAddress, navigator) => {
   return (dispatch, getState) => {
@@ -32,11 +37,13 @@ export const signUp = (emailAddress, navigator) => {
         emailAddress,
         token: payload.token
       }));
+      saveEmailAddress(emailAddress);
     }).catch((err) => {
       dispatch(signUpFailure(null, err));
+      saveEmailAddress('');
       Alert.alert(
         'Error',
-        'Looks like we have an issue signing you up. Please try again.',
+        'Looks like we have an issue signing you up. Please connect to the internet and try again.',
         [
           {
             text: 'OK',
@@ -70,7 +77,7 @@ export const login = (password, navigator) => {
       dispatch(loginFailure(null, err));
       Alert.alert(
         'Error',
-        'Looks like we have an issue logging you in. Please try again.',
+        'Looks like we have an issue logging you in. Please connect to the internet and check your PIN.',
         [
           {
             text: 'OK',
