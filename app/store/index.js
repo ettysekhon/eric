@@ -1,9 +1,8 @@
 import { createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
-import { persistStore, autoRehydrate } from 'redux-persist';
-import { AsyncStorage } from 'react-native';
-
+import objectAssign from 'object-assign';
 import reducers from '../reducers';
+import { getItem } from '../utils/storage';
 
 const thunk = ({ dispatch, getState }) => {
   return (next) => {
@@ -16,11 +15,42 @@ const thunk = ({ dispatch, getState }) => {
   };
 };
 
+const middleware = applyMiddleware(thunk, createLogger());
 
-const createAppStore = applyMiddleware(thunk, createLogger())(createStore);
+const createAppStore = (data = {}) => {
+  return createStore(reducers, data, middleware);
+};
 
-export default (onComplete = () => { return null; }) => {
-  const store = autoRehydrate()(createAppStore)(reducers);
-  persistStore(store, { storage: AsyncStorage }, onComplete);
-  return store;
+export default (onComplete) => {
+  const emptyState = {
+    auth: {
+      error: false,
+      isLoading: false,
+      emailAddress: '',
+      loggedIn: false,
+      token: ''
+    },
+    summary: {
+      error: false,
+      isLoading: false,
+      data: {}
+    }
+  };
+  getItem('EMAIL_ADDRESS')
+    .then((emailAddress) => {
+      const store = objectAssign({},
+        emptyState, {
+          auth: {
+            error: false,
+            isLoading: false,
+            emailAddress: JSON.parse(emailAddress),
+            loggedIn: false,
+            token: ''
+          }
+        });
+      onComplete(createAppStore(store));
+    })
+    .catch(() => {
+      onComplete(createAppStore(emptyState));
+    });
 };

@@ -7,17 +7,22 @@ import App from './App';
 import createStore from './store';
 import LoadingAppView from './components/LoadingAppView';
 
+
 class Root extends Component {
   constructor() {
     super();
     this.state = {
       isLoading: true,
-      store: createStore(() => {
-        /* eslint-disable react/no-set-state */
-        this.setState({ isLoading: false });
-        /* eslint-enable react/no-set-state */
-      })
+      store: null
     };
+    createStore((store) => {
+      /* eslint-disable react/no-set-state */
+      this.setState({
+        isLoading: false,
+        store
+      });
+      /* eslint-enable react/no-set-state */
+    });
   }
   render() {
     if (this.state.isLoading) {
