@@ -8,6 +8,7 @@ import styles from './Styles/TextInputStyles';
 export const EmailTextInput = ({ style, ...props }) => {
   const newProps = {
     keyboardType: 'email-address',
+    autoCapitalize: 'none',
     placeholderTextColor: 'white'
   };
   return (

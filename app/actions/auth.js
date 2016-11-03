@@ -27,16 +27,16 @@ export const signUp = (emailAddress, navigator) => {
     API.signUp(emailAddress, auth.token)
     .then((payload) => {
       if (navigator) {
+        dispatch(signUpSuccess({
+          emailAddress,
+          token: payload.token
+        }));
         requestAnimationFrame(() => {
           return navigator.push({
             route: routes.LOGIN
           });
         });
       }
-      dispatch(signUpSuccess({
-        emailAddress,
-        token: payload.token
-      }));
       saveEmailAddress(emailAddress);
     }).catch((err) => {
       dispatch(signUpFailure(null, err));
@@ -64,15 +64,15 @@ export const login = (password, navigator) => {
     API.login(password, auth.token)
     .then((payload) => {
       if (navigator) {
+        dispatch(loginSuccess({
+          token: payload.token
+        }));
         requestAnimationFrame(() => {
           return navigator.push({
             route: routes.SUMMARY
           });
         });
       }
-      dispatch(loginSuccess({
-        token: payload.token
-      }));
     }).catch((err) => {
       dispatch(loginFailure(null, err));
       Alert.alert(

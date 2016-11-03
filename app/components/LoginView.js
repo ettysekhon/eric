@@ -52,11 +52,10 @@ class LoginView extends Component {
           }
           <View style={formStyle}>
             <TControl
+              editable={!this.props.isLoading}
               label={'ENTER YOUR ASSIGNED PIN'}
+              maxLength={4}
               onChangeText={(text) => {
-                if (text.length > 4 || this.props.isLoading) {
-                  return;
-                }
                 /* eslint-disable react/no-set-state */
                 if (text.length === 4) {
                   this.setState({ text, canSubmit: true });
