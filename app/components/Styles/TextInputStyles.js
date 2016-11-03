@@ -1,9 +1,8 @@
 import {
-  StyleSheet,
-} from 'react-native';
+  create,
+} from './StyleSheet';
 
-
-export default StyleSheet.create({
+export default create({
   textInput: {
     height: 50,
     borderWidth: 1,
@@ -16,5 +15,10 @@ export default StyleSheet.create({
   },
   numberInput: {
     textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    android: {
+      textAlignVertical: 'center'
+    }
   }
 });

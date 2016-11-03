@@ -52,7 +52,7 @@ class LoginView extends Component {
           }
           <View style={formStyle}>
             <TControl
-              label={'ENTER THE PIN WE SENT TO YOU'}
+              label={'ENTER YOUR ASSIGNED PIN'}
               onChangeText={(text) => {
                 if (text.length > 4 || this.props.isLoading) {
                   return;
@@ -65,7 +65,7 @@ class LoginView extends Component {
                 }
                 /* eslint-enable react/no-set-state */
               }}
-              placeholder={'enter your pin'}
+              placeholder={'****'}
               style={styles.formControl}
               value={this.state.text}
             />

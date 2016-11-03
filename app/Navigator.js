@@ -1,5 +1,6 @@
 import React, {
   Component,
+  PropTypes
 } from 'react';
 
 import {
@@ -8,6 +9,8 @@ import {
   StyleSheet,
   Navigator
 } from 'react-native';
+
+import { connect } from 'react-redux';
 
 import LoginView from './components/LoginView';
 import SignupView from './components/SignupView';
@@ -91,7 +94,7 @@ class AppNavigator extends Component {
           return Navigator.SceneConfigs.PushFromRight;
         }}
         initialRoute={{
-          route: routes.SIGNUP
+          route: this.props.initialRoute
         }}
         ref={(c) => { this.navigator = c; }}
         renderScene={renderRoute}
@@ -106,6 +109,10 @@ AppNavigator.childContextTypes = {
   removeBackButtonListener: React.PropTypes.func,
 };
 
+AppNavigator.propTypes = {
+  initialRoute: PropTypes.string.isRequired
+};
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.background,
@@ -113,4 +120,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AppNavigator;
+const select = (state, ownProps) => {
+  return {
+    initialRoute: state.auth.emailAddress ? routes.LOGIN : routes.SIGNUP
+  };
+};
+
+export default connect(select)(AppNavigator);
