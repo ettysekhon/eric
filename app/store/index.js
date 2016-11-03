@@ -1,5 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
+import { persistStore, autoRehydrate } from 'redux-persist';
+import { AsyncStorage } from 'react-native';
 
 import reducers from '../reducers';
 
@@ -14,8 +16,11 @@ const thunk = ({ dispatch, getState }) => {
   };
 };
 
-const middleware = applyMiddleware(thunk, createLogger());
 
-export default (data = {}) => {
-  return createStore(reducers, data, middleware);
+const createAppStore = applyMiddleware(thunk, createLogger())(createStore);
+
+export default (onComplete = () => { return null; }) => {
+  const store = autoRehydrate()(createAppStore)(reducers);
+  persistStore(store, { storage: AsyncStorage }, onComplete);
+  return store;
 };
