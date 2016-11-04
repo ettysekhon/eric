@@ -16,8 +16,8 @@ const loginRequest = createAction(ActionTypes.LOGIN_REQUEST);
 const loginSuccess = createAction(ActionTypes.LOGIN_SUCCESS);
 const loginFailure = createAction(ActionTypes.LOGIN_FAILURE);
 
-const saveEmailAddress = (emailAddress) => {
-  setItem('EMAIL_ADDRESS', emailAddress);
+const saveItem = (key, value) => {
+  setItem(key, value);
 };
 
 export const signUp = (emailAddress, navigator) => {
@@ -27,20 +27,26 @@ export const signUp = (emailAddress, navigator) => {
     API.signUp(emailAddress, auth.token)
     .then((payload) => {
       if (navigator) {
-        dispatch(signUpSuccess({
-          emailAddress,
-          token: payload.token
-        }));
         requestAnimationFrame(() => {
           return navigator.push({
             route: routes.LOGIN
           });
         });
+        dispatch(signUpSuccess({
+          emailAddress,
+          token: payload.token
+        }));
       }
-      saveEmailAddress(emailAddress);
+      saveItem('CREDENTIALS', {
+        emailAddress,
+        token: payload.token
+      });
     }).catch((err) => {
       dispatch(signUpFailure(null, err));
-      saveEmailAddress('');
+      saveItem('CREDENTIALS', {
+        emailAddress: '',
+        token: ''
+      });
       Alert.alert(
         'Error',
         'Looks like we have an issue signing you up. Please connect to the internet and try again.',
@@ -64,14 +70,14 @@ export const login = (password, navigator) => {
     API.login(password, auth.token)
     .then((payload) => {
       if (navigator) {
-        dispatch(loginSuccess({
-          token: payload.token
-        }));
         requestAnimationFrame(() => {
           return navigator.push({
             route: routes.SUMMARY
           });
         });
+        dispatch(loginSuccess({
+          token: payload.token
+        }));
       }
     }).catch((err) => {
       dispatch(loginFailure(null, err));

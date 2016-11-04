@@ -3,10 +3,6 @@ import React, {
   PropTypes
 } from 'react';
 
-import {
-  AppState
-} from 'react-native';
-
 import { connect } from 'react-redux';
 
 import SummaryCard from './SummaryCard';
@@ -16,29 +12,10 @@ import Header from './Header';
 import ModalSpinner from './ModalSpinner';
 import MessageView from './MessageView';
 import getSummary from '../actions/summary';
-import routes from '../utils/routes';
 
 class SummaryView extends Component {
   componentDidMount() {
     this.props.getSummary();
-    this.handleAppStateChange = this.handleAppStateChange.bind(this);
-    AppState.addEventListener('change', this.handleAppStateChange);
-  }
-  componentWillUnmount() {
-    AppState.removeEventListener('change', this.handleAppStateChange);
-  }
-  handleAppStateChange(currentAppState) {
-    // TODO: update app state to log user out too
-    if (currentAppState === 'active') {
-      const { navigator } = this.props;
-      if (navigator) {
-        requestAnimationFrame(() => {
-          return navigator.push({
-            route: routes.SIGNUP
-          });
-        });
-      }
-    }
   }
   render() {
     const { isLoading, summary, error } = this.props;
@@ -91,7 +68,6 @@ SummaryView.propTypes = {
   getSummary: PropTypes.func,
   isLoading: PropTypes.bool.isRequired,
   /* eslint-disable react/forbid-prop-types */
-  navigator: PropTypes.object.isRequired,
   summary: PropTypes.object
   /* eslint-enable react/forbid-prop-types */
 };

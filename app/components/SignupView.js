@@ -7,8 +7,6 @@ import {
   View
 } from 'react-native';
 
-// import Orientation from 'react-native-orientation';
-
 import { connect } from 'react-redux';
 
 import BackgroundImage from './BackgroundImage';
@@ -41,7 +39,9 @@ const validateEmail = (emailAddress) => {
 class SignupView extends Component {
   constructor(props) {
     super(props);
-    this.state = { emailAddress: this.props.emailAddress, canSubmit: false };
+    console.log('navigator', this.props.navigator.getCurrentRoutes());
+    const canSubmit = validateEmail(this.props.emailAddress);
+    this.state = { emailAddress: this.props.emailAddress, canSubmit };
   }
   render() {
     let logo = null;

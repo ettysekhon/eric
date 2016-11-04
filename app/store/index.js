@@ -36,16 +36,23 @@ export default (onComplete) => {
       data: {}
     }
   };
-  getItem('EMAIL_ADDRESS')
-    .then((emailAddress) => {
+  getItem('CREDENTIALS')
+    .then((item) => {
+      let credentials = {
+        emailAddress: '',
+        token: ''
+      };
+      if (item) {
+        credentials = JSON.parse(item);
+      }
       const store = objectAssign({},
         emptyState, {
           auth: {
             error: false,
             isLoading: false,
-            emailAddress: JSON.parse(emailAddress),
+            emailAddress: credentials.emailAddress,
             loggedIn: false,
-            token: ''
+            token: credentials.token
           }
         });
       onComplete(createAppStore(store));
