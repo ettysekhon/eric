@@ -39,7 +39,6 @@ const validateEmail = (emailAddress) => {
 class SignupView extends Component {
   constructor(props) {
     super(props);
-    console.log('navigator', this.props.navigator.getCurrentRoutes());
     const canSubmit = validateEmail(this.props.emailAddress);
     this.state = { emailAddress: this.props.emailAddress, canSubmit };
   }
