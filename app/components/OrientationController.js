@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 
 import updateOrientation from '../actions/orientation';
 
+// TODO: fix android hack!
 class OrientationController extends Component {
   constructor() {
     super();
@@ -33,6 +34,7 @@ class OrientationController extends Component {
     Orientation.removeOrientationListener(this.updateOrientation);
   }
   updateOrientation(orientation) {
+    console.log('orientationChange', orientation);
     if (OrientationController.isAndroid) {
       return;
     }

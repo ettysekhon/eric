@@ -3,7 +3,7 @@ import device from '../utils/device';
 // http://stackoverflow.com/questions/38077273/react-native-fect-network-request-failed-not-using-localhost
 
 const getEndpoint = (path) => {
-  const test = true;
+  const test = false;
   const host = test === true
     ? 'http://localhost:8082/api/'
     : 'http://eric.kicks-ass.org/api/';
