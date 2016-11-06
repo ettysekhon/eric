@@ -8,6 +8,7 @@ const colors = {
   negative: '#D0021B',
   primary: '#9013FE',
   primaryGradientStart: '#3023AE',
+  primaryGradientMiddle: '#7645c1',
   primaryGradientEnd: '#C86DD7',
   secondaryGradientStart: '#AD6BFF',
   secondaryGradientEnd: '#74BCF7',

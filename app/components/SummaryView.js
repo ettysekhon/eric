@@ -14,19 +14,63 @@ import MessageView from './MessageView';
 import getSummary from '../actions/summary';
 
 class SummaryView extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isRefreshing: false,
+      isLoading: false,
+      summary: {}
+    };
+    this.onRefresh = this.onRefresh.bind(this);
+  }
   componentDidMount() {
     this.props.getSummary();
   }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.isLoading !== this.props.isLoading) {
+      if (this.state.isRefreshing === false) {
+        this.setState({
+          isLoading: nextProps.isLoading,
+          summary: nextProps.summary
+        });
+      }
+
+      if (this.state.isRefreshing === true) {
+        if (nextProps.isLoading === false) {
+          this.setState({
+            isRefreshing: false,
+            isLoading: false,
+            summary: nextProps.summary
+          });
+        }
+      }
+    }
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState.isRefreshing === true) {
+      if (nextProps.isLoading === true && nextProps.error === false) {
+        return false;
+      }
+    }
+    return true;
+  }
+  onRefresh() {
+    /* eslint-disable react/no-set-state */
+    this.setState({ isRefreshing: true });
+    /* eslint-enable react/no-set-state */
+    this.props.getSummary();
+  }
   render() {
-    const { isLoading, summary, error } = this.props;
+    const { error } = this.props;
+    const summary = this.state.summary;
     const data = summary.data || [];
     const errorMessage = 'Howdy! Looks like you are hiding in a cave. Please connect to the internet and try again.';
-
+    const onRefresh = this.onRefresh;
     const content = error
       ? (
         <MessageView
-          buttonIsDisabled={this.props.isLoading}
-          buttonIsLoading={this.props.isLoading}
+          buttonIsDisabled={this.state.isLoading}
+          buttonIsLoading={this.state.isLoading}
           buttonOnPress={() => {
             /* eslint-disable react/no-set-state */
             this.setState({ canSubmit: false });
@@ -37,15 +81,21 @@ class SummaryView extends Component {
           icon={'refresh'}
           message={errorMessage}
         />
-    ) : (<Content>{data.map((card, index) => {
-      return (
-        <SummaryCard
-          delta={card.delta}
-          key={index}
-          tables={card.tables}
-        />
-      );
-    })}</Content>);
+    ) : (
+      <Content
+        isRefreshing={this.state.isRefreshing}
+        onRefresh={onRefresh}
+      >
+        {data.map((card, index) => {
+          return (
+            <SummaryCard
+              delta={card.delta}
+              key={index}
+              tables={card.tables}
+            />
+          );
+        })}
+      </Content>);
     return (
       <Container>
         <Header
@@ -53,7 +103,7 @@ class SummaryView extends Component {
           title={summary.title}
         />
         <ModalSpinner
-          visible={isLoading}
+          visible={this.state.isLoading}
         />
         {
           content
