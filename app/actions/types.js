@@ -14,6 +14,7 @@ module.exports = {
   // SYNC.
   // -------------------------------------------------------------------------->
   LOGOUT: 'LOGOUT',
-  ORIENTATION_CHANGE: 'ORIENTATION_CHANGE'
+  ORIENTATION_CHANGE: 'ORIENTATION_CHANGE',
+  APP_BOOTSTRAP: 'APP_BOOTSTRAP'
   // -------------------------------------------------------------------------->
 };

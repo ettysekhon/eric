@@ -7,9 +7,12 @@ import styles from './Styles/TextInputStyles';
 
 export const EmailTextInput = ({ style, ...props }) => {
   const newProps = {
+    autoCorrect: false,
+    enablesReturnKeyAutomatically: true,
     keyboardType: 'email-address',
     autoCapitalize: 'none',
-    placeholderTextColor: 'white'
+    placeholderTextColor: 'white',
+    underlineColorAndroid: '#9013FE'
   };
   return (
     <RNTextInput
@@ -26,7 +29,8 @@ export const PasswordNumberTextInput = ({ style, ...props }) => {
     enablesReturnKeyAutomatically: true,
     secureTextEntry: true,
     keyboardType: 'numeric',
-    placeholderTextColor: 'white'
+    placeholderTextColor: 'white',
+    underlineColorAndroid: '#9013FE'
   };
   return (
     <RNTextInput

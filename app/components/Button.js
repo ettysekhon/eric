@@ -6,7 +6,6 @@ import React, {
 import {
   ActivityIndicator,
   Platform,
-  ProgressBarAndroid,
   StyleSheet,
   Text,
   TouchableNativeFeedback,
@@ -15,25 +14,7 @@ import {
 } from 'react-native';
 
 class Button extends Component {
-  renderInnerTextAndroid() {
-    if (this.props.isLoading) {
-      return (
-        <ProgressBarAndroid
-          color={this.props.activityIndicatorColor || 'black'}
-          style={[{
-            height: 20,
-          }, styles.spinner]}
-          styleAttr={'Inverse'}
-        />
-      );
-    }
-    return (
-      <Text style={[styles.textButton, this.props.textStyle]}>
-        {this.props.children}
-      </Text>
-    );
-  }
-  renderInnerTextiOS() {
+  renderInnerText() {
     if (this.props.isLoading) {
       return (
         <ActivityIndicator
@@ -49,12 +30,6 @@ class Button extends Component {
         {this.props.children}
       </Text>
     );
-  }
-  renderInnerText() {
-    if (Button.isAndroid) {
-      return this.renderInnerTextAndroid();
-    }
-    return this.renderInnerTextiOS();
   }
   render() {
     if (this.props.isDisabled === true || this.props.isLoading === true) {
@@ -78,14 +53,14 @@ class Button extends Component {
     };
     if (Button.isAndroid) {
       touchableProps = Object.assign(touchableProps, {
-          /* eslint-disable new-cap */
+        /* eslint-disable new-cap */
         background: this.props.background || TouchableNativeFeedback.SelectableBackground()
         /* eslint-enable new-cap */
       });
       return (
         <TouchableNativeFeedback {...touchableProps}>
           <Text style={[styles.button, this.props.style]}>
-            {this.renderInnerTextAndroid()}
+            {this.renderInnerText()}
           </Text>
         </TouchableNativeFeedback>
       );
@@ -95,7 +70,7 @@ class Button extends Component {
         {...touchableProps}
         style={[styles.button, this.props.style]}
       >
-        {this.renderInnerTextiOS()}
+        {this.renderInnerText()}
       </TouchableOpacity>
     );
   }

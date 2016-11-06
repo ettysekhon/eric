@@ -1,6 +1,5 @@
 import React, {
-  Component,
-  PropTypes
+  Component
 } from 'react';
 
 import {
@@ -10,11 +9,10 @@ import {
   Navigator
 } from 'react-native';
 
-import { connect } from 'react-redux';
-
 import LoginView from './components/LoginView';
 import SigninView from './components/SigninView';
 import SummaryView from './components/SummaryView';
+import LoadingAppView from './components/LoadingAppView';
 
 import routes from './utils/routes';
 import { Colors } from './theme/';
@@ -22,6 +20,12 @@ import { Colors } from './theme/';
 // TODO: refactor navigator
 const renderRoute = (route, navigator) => {
   switch (route.route) {
+  case routes.LOADING:
+    return (
+      <LoadingAppView
+        navigator={navigator}
+      />
+    );
   case routes.LOGIN:
     return (
       <LoginView
@@ -94,7 +98,7 @@ class AppNavigator extends Component {
           return Navigator.SceneConfigs.PushFromRight;
         }}
         initialRoute={{
-          route: this.props.initialRoute
+          route: routes.LOADING
         }}
         ref={(c) => { this.navigator = c; }}
         renderScene={renderRoute}
@@ -109,10 +113,6 @@ AppNavigator.childContextTypes = {
   removeBackButtonListener: React.PropTypes.func,
 };
 
-AppNavigator.propTypes = {
-  initialRoute: PropTypes.string.isRequired
-};
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.background,
@@ -120,10 +120,4 @@ const styles = StyleSheet.create({
   },
 });
 
-const select = (state, ownProps) => {
-  return {
-    initialRoute: state.auth.emailAddress ? routes.LOGIN : routes.SIGNIN
-  };
-};
-
-export default connect(select)(AppNavigator);
+export default AppNavigator;

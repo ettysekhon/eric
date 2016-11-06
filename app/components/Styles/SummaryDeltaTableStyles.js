@@ -2,8 +2,6 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { Colors } from '../../theme/';
-
 import {
   normalize
 } from '../../utils/size';
