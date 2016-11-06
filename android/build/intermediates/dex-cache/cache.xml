@@ -12,6 +12,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_f9c710a19659368b9efcea5eee66dd55058831c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.6.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="0dfc12e4aacf514346ea866560c99807d032bc48">
+        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-iid-9.6.1_26217fc864b7c7b7ded74c8811e7e62a549ead84.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/sekhoe01/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
         jumboMode="false"
         optimize="true"
@@ -39,24 +57,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/sekhoe01/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_a1bacb536ac2ea304537515aeddd7b6fd1997d1a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
-        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_f1d2dd254a2e1313656e5e9c00762b4fecfe93e0.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/sekhoe01/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
         jumboMode="false"
         optimize="true"
@@ -75,12 +75,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.6.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
-        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.1_96dc5b854ea600745e816e8dc56f86c3e6c18ab8.jar" />
+        sha1="eccaaa9ffa6bb4bfbd2e870f01aaf69655d353be">
+        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-9.6.1_849e2a9a4be2710211338868500822cac945cf18.jar" />
     </item>
     <item
         is-multidex="false"
@@ -129,6 +129,33 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.6.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ad7706f8bb4a985656a8d2142f74021c8b0e03d8">
+        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-9.6.1_d854870ca444f3087eba49c17b953a13591f68bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sekhoe01/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_bc1feee29de8c39a0253a4617b157cde3a2d62b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.6.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4a36600281a648769411ef642c331851732bf29e">
+        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.6.1_faac338c799b6f53fd207f2ec30f926dfcf20e43.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/Eric/react-native-vector-icons/unspecified/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -162,6 +189,15 @@
         revision="23.0.1"
         sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
         <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-0.11.0_ee0fb14b0dde2570560b7c4067f536cac554bf6d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_0d1a7acb4ed19cc2e5568976fa42866d0566247c.jar" />
     </item>
     <item
         is-multidex="false"
@@ -201,6 +237,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/Eric/react-native-orientation/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="156e5dc9b9b5e316b3bfe55054b8fc704614b1a5">
+        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/Eric-react-native-orientation-unspecified_d16240732b5049a36388292b9ba98e738872bb84.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.35.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -210,12 +255,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.6.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="af7582c6b327449c6d32518e6a10307860b7b5d6">
+        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-9.6.1_bdda1202d280daf94b90d949c09070efa0491165.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/sekhoe01/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
         <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_d58e9596783b5405259c81f8b9ef6a3e8bdff4bf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/Eric/react-native-device-info/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="687f7ed82ddd56bcfb35d56f87a8ae85682204d8">
+        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/Eric-react-native-device-info-unspecified_db16b8f294b34ebf59bf161cd2c3fa7782b24379.jar" />
     </item>
     <item
         is-multidex="false"
