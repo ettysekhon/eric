@@ -49,7 +49,7 @@ export const signIn = (emailAddress, navigator) => {
       });
       Alert.alert(
         'Error',
-        'Looks like we have an issue signing you up. Please connect to the internet and try again.',
+        'Looks like we have an issue signing you in. Please connect to the internet and try again.',
         [
           {
             text: 'OK',
@@ -83,7 +83,7 @@ export const login = (password, navigator) => {
       dispatch(loginFailure(null, err));
       Alert.alert(
         'Error',
-        'Looks like we have an issue logging you in. Please connect to the internet and check your PIN.',
+        'Looks like we have an issue logging you in. Please connect to the internet and check your PIN or sign in again.',
         [
           {
             text: 'OK',

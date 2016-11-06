@@ -53,7 +53,7 @@ class LoginView extends Component {
           <View style={formStyle}>
             <TControl
               editable={!this.props.isLoading}
-              label={'ENTER YOUR ASSIGNED PIN'}
+              label={'ENTER PIN TO CONTINUE'}
               maxLength={4}
               onChangeText={(text) => {
                 /* eslint-disable react/no-set-state */
