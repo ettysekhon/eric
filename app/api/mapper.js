@@ -13,14 +13,25 @@ export default (summary) => {
     const tables = metric.tables.map((table) => {
       const tableData = table.data.map((v, i) => {
         const formattedNumber = formatNumber(v);
-        if (headers[i] === 'WoW' || headers[i] === 'YoY' || headers[i] === 'YoY(Adjusted)') {
-          return `${formattedNumber}%`;
-        }
-        return formattedNumber;
+        const directionHeader = headers[i] === 'WoW' || headers[i] === 'YoY' || headers[i] === 'YoY(Adjusted)';
+        return {
+          up: v > 0,
+          value: directionHeader ? `${formattedNumber}%` : formattedNumber,
+          isHeader: false
+        };
+      });
+      const headerData = headers.map((header, i) => {
+        const showDirection = header === 'WoW' || header === 'YoY' || header === 'YoY(Adjusted)';
+        return {
+          up: tableData[i].up,
+          value: header,
+          showDirection,
+          isHeader: true
+        };
       });
       return {
         title: table.title,
-        data: [headers, tableData]
+        data: [headerData, tableData]
       };
     });
     const delta = metric.delta.map((d, index) => {

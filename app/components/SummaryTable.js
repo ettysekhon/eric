@@ -6,6 +6,8 @@ import {
   View
 } from 'react-native';
 
+import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
+
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 import LinearGradient from 'react-native-linear-gradient';
@@ -15,19 +17,43 @@ import {
   TextMedium,
 } from './Text';
 
+import {
+  normalize
+} from '../utils/size';
+
 import { Colors } from '../theme/';
 import styles from './Styles/SummaryTableStyles';
 
+const Arrow = ({ up }) => {
+  const direction = up ? 'long-arrow-up' : 'long-arrow-down';
+  const arrowColor = up ? 'green' : 'red';
+  return (
+    <FontAwesomeIcons
+      color={arrowColor}
+      name={direction}
+      size={normalize(8)}
+      style={{
+        marginLeft: 5,
+        marginRight: 5
+      }}
+    />
+  );
+};
+
 const Cell = ({ cell, style }) => {
+  const arrow = cell.isHeader && cell.showDirection
+    ? (<Arrow up={cell.up} />)
+    : null;
   return (
     <View style={[styles.cell, style]}>
+      { arrow }
       <TextMedium
         style={{
           color: 'white'
         }}
       >
         {
-          cell
+          cell.value
         }
       </TextMedium>
     </View>
