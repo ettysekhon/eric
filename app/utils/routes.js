@@ -1,5 +1,5 @@
 export default {
   LOGIN: 'LOGIN',
-  SIGNUP: 'SIGNUP',
+  SIGNIN: 'SIGNIN',
   SUMMARY: 'SUMMARY'
 };

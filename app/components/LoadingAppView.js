@@ -6,7 +6,7 @@ import {
 
 import BackgroundImage from './BackgroundImage';
 import ModalSpinner from './ModalSpinner';
-import styles from './Styles/SignupViewStyles';
+import styles from './Styles/SigninViewStyles';
 import Logo from './Logo';
 
 const LoadingAppView = () => {

@@ -10,13 +10,13 @@ import {
 import { connect } from 'react-redux';
 
 import BackgroundImage from './BackgroundImage';
-import styles from './Styles/SignupViewStyles';
+import styles from './Styles/SigninViewStyles';
 import Logo from './Logo';
 import FormControl from './FormControl';
 import ButtonEric from './ButtonEric';
 
 import {
-  signUp
+  signIn
 } from '../actions/auth';
 
 import {
@@ -36,7 +36,7 @@ const validateEmail = (emailAddress) => {
   return !(isEmpty || !validEmail);
 };
 
-class SignupView extends Component {
+class SignInView extends Component {
   constructor(props) {
     super(props);
     const canSubmit = validateEmail(this.props.emailAddress);
@@ -78,7 +78,7 @@ class SignupView extends Component {
               isDisabled={!this.state.canSubmit || this.props.isLoading}
               isLoading={this.props.isLoading}
               onPress={() => {
-                this.props.signUp(this.state.emailAddress, this.props.navigator);
+                this.props.signIn(this.state.emailAddress, this.props.navigator);
               }}
             >
               {'SUBMIT'}
@@ -90,16 +90,16 @@ class SignupView extends Component {
   }
 }
 
-SignupView.displayName = 'SignupView';
+SignInView.displayName = 'SignInView';
 
-SignupView.propTypes = {
+SignInView.propTypes = {
   emailAddress: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
   /* eslint-disable react/forbid-prop-types */
   navigator: PropTypes.object.isRequired,
   /* eslint-enable react/forbid-prop-types */
   orientation: PropTypes.string,
-  signUp: PropTypes.func,
+  signIn: PropTypes.func,
 };
 
 const select = (state, ownProps) => {
@@ -113,8 +113,8 @@ const select = (state, ownProps) => {
 
 export default connect(select, (dispatch) => {
   return {
-    signUp: (emailAddress, navigator) => {
-      dispatch(signUp(emailAddress, navigator));
+    signIn: (emailAddress, navigator) => {
+      dispatch(signIn(emailAddress, navigator));
     }
   };
-})(SignupView);
+})(SignInView);

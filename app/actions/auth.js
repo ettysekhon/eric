@@ -8,9 +8,9 @@ import API from '../api';
 import routes from '../utils/routes';
 import { setItem } from '../utils/storage';
 
-const signUpRequest = createAction(ActionTypes.SIGNUP_REQUEST);
-const signUpSuccess = createAction(ActionTypes.SIGNUP_SUCCESS);
-const signUpFailure = createAction(ActionTypes.SIGNUP_FAILURE);
+const signInRequest = createAction(ActionTypes.SIGNIN_REQUEST);
+const signInSuccess = createAction(ActionTypes.SIGNIN_SUCCESS);
+const signInFailure = createAction(ActionTypes.SIGNIN_FAILURE);
 
 const loginRequest = createAction(ActionTypes.LOGIN_REQUEST);
 const loginSuccess = createAction(ActionTypes.LOGIN_SUCCESS);
@@ -20,11 +20,11 @@ const saveItem = (key, value) => {
   setItem(key, value);
 };
 
-export const signUp = (emailAddress, navigator) => {
+export const signIn = (emailAddress, navigator) => {
   return (dispatch, getState) => {
     const { auth } = getState();
-    dispatch(signUpRequest());
-    API.signUp(emailAddress, auth.token)
+    dispatch(signInRequest());
+    API.signIn(emailAddress, auth.token)
     .then((payload) => {
       if (navigator) {
         requestAnimationFrame(() => {
@@ -32,7 +32,7 @@ export const signUp = (emailAddress, navigator) => {
             route: routes.LOGIN
           });
         });
-        dispatch(signUpSuccess({
+        dispatch(signInSuccess({
           emailAddress,
           token: payload.token
         }));
@@ -42,7 +42,7 @@ export const signUp = (emailAddress, navigator) => {
         token: payload.token
       });
     }).catch((err) => {
-      dispatch(signUpFailure(null, err));
+      dispatch(signInFailure(null, err));
       saveItem('CREDENTIALS', {
         emailAddress: '',
         token: ''

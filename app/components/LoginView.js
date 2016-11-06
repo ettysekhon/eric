@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 
 import BackgroundImage from './BackgroundImage';
 import LinkObject from './LinkObject';
-import styles from './Styles/SignupViewStyles';
+import styles from './Styles/SigninViewStyles';
 import Logo from './Logo';
 import FormControl from './FormControl';
 import ButtonEric from './ButtonEric';
@@ -86,7 +86,7 @@ class LoginView extends Component {
                 if (navigator) {
                   requestAnimationFrame(() => {
                     return navigator.push({
-                      route: routes.SIGNUP
+                      route: routes.SIGNIN
                     });
                   });
                 }
@@ -94,7 +94,7 @@ class LoginView extends Component {
             >
               <Text
                 style={styles.link}
-              >SIGNUP</Text>
+              >SIGNIN</Text>
             </LinkObject>
           </View>
         </View>

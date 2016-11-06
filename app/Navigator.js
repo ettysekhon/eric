@@ -13,7 +13,7 @@ import {
 import { connect } from 'react-redux';
 
 import LoginView from './components/LoginView';
-import SignupView from './components/SignupView';
+import SigninView from './components/SigninView';
 import SummaryView from './components/SummaryView';
 
 import routes from './utils/routes';
@@ -28,9 +28,9 @@ const renderRoute = (route, navigator) => {
         navigator={navigator}
       />
     );
-  case routes.SIGNUP:
+  case routes.SIGNIN:
     return (
-      <SignupView
+      <SigninView
         navigator={navigator}
       />
     );
@@ -42,7 +42,7 @@ const renderRoute = (route, navigator) => {
     );
   default:
     return (
-      <SignupView
+      <SigninView
         navigator={navigator}
       />
     );
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
 
 const select = (state, ownProps) => {
   return {
-    initialRoute: state.auth.emailAddress ? routes.LOGIN : routes.SIGNUP
+    initialRoute: state.auth.emailAddress ? routes.LOGIN : routes.SIGNIN
   };
 };
 

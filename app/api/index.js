@@ -87,8 +87,8 @@ const post = (url, body) => {
   });
 };
 
-const signUp = (emailAddress, token) => {
-  return post(getEndpoint('signup'), {
+const signIn = (emailAddress, token) => {
+  return post(getEndpoint('signin'), {
     emailAddress,
     token
   });
@@ -108,7 +108,7 @@ const getSummary = (token) => {
 };
 
 export default {
-  signUp,
+  signIn,
   login,
   getSummary
 };

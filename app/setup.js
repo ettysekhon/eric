@@ -7,7 +7,6 @@ import App from './App';
 import createStore from './store';
 import LoadingAppView from './components/LoadingAppView';
 
-
 class Root extends Component {
   constructor() {
     super();

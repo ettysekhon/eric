@@ -11,11 +11,11 @@ const blankState = {
 
 const reducer = (state = blankState, action) => {
   switch (action.type) {
-  case ActionTypes.SIGNUP_REQUEST:
+  case ActionTypes.SIGNIN_REQUEST:
     return { ...blankState, isLoading: true, error: false };
-  case ActionTypes.SIGNUP_FAILURE:
+  case ActionTypes.SIGNIN_FAILURE:
     return { ...blankState, error: false };
-  case ActionTypes.SIGNUP_SUCCESS:
+  case ActionTypes.SIGNIN_SUCCESS:
     return { ...blankState,
       emailAddress: action.payload.emailAddress,
       token: action.payload.token };
