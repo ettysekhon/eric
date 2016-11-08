@@ -23,7 +23,7 @@ export const TextMedium = ({ style, ...props }) => {
 export const Heading1 = ({ style, ...props }) => {
   return (
     <RNText
-      style={[styles.font, styles.h1, style]}
+      style={[styles.fontBold, styles.h1, style]}
       {...props}
     />
   );
@@ -32,7 +32,7 @@ export const Heading1 = ({ style, ...props }) => {
 export const Heading2 = ({ style, ...props }) => {
   return (
     <RNText
-      style={[styles.font, styles.h2, style]}
+      style={[styles.fontBold, styles.h2, style]}
       {...props}
     />
   );
@@ -41,7 +41,7 @@ export const Heading2 = ({ style, ...props }) => {
 export const Heading3 = ({ style, ...props }) => {
   return (
     <RNText
-      style={[styles.font, styles.h3, style]}
+      style={[styles.fontBold, styles.h3, style]}
       {...props}
     />
   );
@@ -50,7 +50,7 @@ export const Heading3 = ({ style, ...props }) => {
 export const Heading4 = ({ style, ...props }) => {
   return (
     <RNText
-      style={[styles.font, styles.h4, style]}
+      style={[styles.fontBold, styles.h4, style]}
       {...props}
     />
   );

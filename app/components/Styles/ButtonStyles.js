@@ -12,6 +12,7 @@ export default StyleSheet.create({
   textStyle: {
     color: '#fff',
     fontSize: 14,
-    letterSpacing: 2
+    letterSpacing: 1.5,
+    fontFamily: 'Montserrat-Regular'
   }
 });

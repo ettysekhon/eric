@@ -46,7 +46,11 @@ const Cell = ({ cell, isHeader, up, style }) => {
         up={up}
       />)
     : (
-      <Heading4>
+      <Heading4
+        style={{
+          letterSpacing: 1.125
+        }}
+      >
         {
           cell
         }

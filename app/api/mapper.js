@@ -13,7 +13,7 @@ export default (summary) => {
     const tables = metric.tables.map((table) => {
       const tableData = table.data.map((v, i) => {
         const formattedNumber = formatNumber(v);
-        const directionHeader = headers[i] === 'WoW' || headers[i] === 'YoY' || headers[i] === 'YoY(Adjusted)';
+        const directionHeader = headers[i] === 'WoW' || headers[i] === 'YoY' || headers[i] === 'YoY(Adj)';
         return {
           up: v > 0,
           value: directionHeader ? `${formattedNumber}%` : formattedNumber,
@@ -21,7 +21,7 @@ export default (summary) => {
         };
       });
       const headerData = headers.map((header, i) => {
-        const showDirection = header === 'WoW' || header === 'YoY' || header === 'YoY(Adjusted)';
+        const showDirection = header === 'WoW' || header === 'YoY' || header === 'YoY(Adj)';
         return {
           up: tableData[i].up,
           value: header,

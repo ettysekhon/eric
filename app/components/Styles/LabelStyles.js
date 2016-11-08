@@ -11,6 +11,6 @@ export default StyleSheet.create({
     backgroundColor: 'transparent',
     color: 'white',
     paddingBottom: normalize(5),
-    letterSpacing: normalize(2)
+    letterSpacing: normalize(1.5)
   }
 });

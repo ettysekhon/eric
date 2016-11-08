@@ -19,8 +19,9 @@ export default StyleSheet.create({
   },
   link: {
     color: Colors.grayLight,
-    letterSpacing: normalize(3),
+    letterSpacing: normalize(2),
     marginBottom: 10,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    fontFamily: 'Montserrat-Regular'
   }
 });

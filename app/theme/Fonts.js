@@ -10,7 +10,7 @@ const type = {
   base: 'Montserrat-Regular',
   bold: 'Montserrat-Bold',
   emphasis: 'HelveticaNeue-Italic'
-}
+};
 
 const size = {
   h1: normalize(28),
@@ -19,27 +19,23 @@ const size = {
   h4: normalize(12),
   regular: normalize(14),
   medium: normalize(12)
-}
+};
 
 const style = {
   h1: {
-    fontWeight: 'bold',
-    fontSize: size.h1,
-    letterSpacing: 4
+    fontSize: size.h1
   },
   h2: {
-    fontWeight: 'bold',
+    letterSpacing: 1.25,
     fontSize: size.h2
   },
   h3: {
-    fontWeight: 'bold',
-    fontSize: size.h3,
-      letterSpacing: 1.25
+    letterSpacing: 1.25,
+    fontSize: size.h3
   },
   h4: {
-    fontWeight: 'bold',
-    fontSize: size.h4,
-    letterSpacing: 1.25
+    letterSpacing: 1.25,
+    fontSize: size.h4
   },
   regular: {
     fontSize: size.regular
@@ -48,17 +44,15 @@ const style = {
     fontSize: size.medium
   },
   input: {
-    fontWeight: 'bold',
     fontSize: size.medium
   },
   label: {
-    fontWeight: 'bold',
     fontSize: size.medium
   }
-}
+};
 
 export default {
   type,
   size,
   style
-}
+};

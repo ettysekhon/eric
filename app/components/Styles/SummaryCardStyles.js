@@ -15,7 +15,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.background
   },
   heading: {
-    color: Colors.grayMediumDark
+    color: Colors.grayMediumDark,
   },
   inner: {
     backgroundColor: Colors.grayLight,

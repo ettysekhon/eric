@@ -1,11 +1,20 @@
+import {
+  Platform
+} from 'react-native';
+
 import device from '../utils/device';
+
+const isAndroid = Platform.OS === 'android';
+
 // TODO: remove this hack when fixed in later version of react-native
 // http://stackoverflow.com/questions/38077273/react-native-fect-network-request-failed-not-using-localhost
+// on android emulator use the following http://10.0.2.2:8082/api/
 
 const getEndpoint = (path) => {
-  const test = false;
+  const test = true;
+  const localhost = isAndroid ? 'http://10.0.2.2:8082/api/' : 'http://localhost:8082/api/';
   const host = test === true
-    ? 'http://localhost:8082/api/'
+    ? localhost
     : 'http://eric.kicks-ass.org/api/';
   return `${host}${path}`;
 };

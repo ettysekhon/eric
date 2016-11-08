@@ -237,15 +237,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/Eric/react-native-orientation/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="156e5dc9b9b5e316b3bfe55054b8fc704614b1a5">
-        <dex dex="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/pre-dexed/debug/Eric-react-native-orientation-unspecified_d16240732b5049a36388292b9ba98e738872bb84.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/sekhoe01/rockstar/react-native-projects/eric/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.35.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
