@@ -20,6 +20,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  title: {
+    letterSpacing: 4
+  },
   subTitle: {
     color: Colors.grayMediumDark
   }

@@ -23,6 +23,7 @@ const size = {
 
 const style = {
   h1: {
+    letterSpacing: 1.25,
     fontSize: size.h1
   },
   h2: {

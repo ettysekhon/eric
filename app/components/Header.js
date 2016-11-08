@@ -17,7 +17,7 @@ import applyLetterSpacing from '../utils/letterSpacing';
 const Header = ({ title, subTitle }) => {
   return (
     <View style={styles.header}>
-      <Heading1>{applyLetterSpacing(title, 1)}</Heading1>
+      <Heading1 style={styles.title}>{applyLetterSpacing(title, 1)}</Heading1>
       <Text style={styles.subTitle}>{subTitle}</Text>
     </View>
   );

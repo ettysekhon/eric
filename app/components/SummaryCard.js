@@ -15,7 +15,6 @@ import {
 import SummaryTable from './SummaryTable';
 import SummaryDeltaTable from './SummaryDeltaTable';
 import styles from './Styles/SummaryCardStyles';
-import applyLetterSpacing from '../utils/letterSpacing';
 
 const CardContent = ({ children }) => {
   return (
