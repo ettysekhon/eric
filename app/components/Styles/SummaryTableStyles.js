@@ -1,12 +1,12 @@
 import {
-  StyleSheet,
-} from 'react-native';
+  create,
+} from './StyleSheet';
 
 import {
   normalize
 } from '../../utils/size';
 
-export default StyleSheet.create({
+export default create({
   row: {
     flexDirection: 'row',
     borderBottomWidth: 0.5,
@@ -24,8 +24,10 @@ export default StyleSheet.create({
     paddingVertical: normalize(10)
   },
   gradient: {
-    marginLeft: normalize(-15),
-    marginRight: normalize(-15),
+    ios: {
+      marginLeft: normalize(-20),
+      marginRight: normalize(-20)
+    },
     elevation: 2,
     shadowColor: '#000000',
     shadowOpacity: 0.1,
