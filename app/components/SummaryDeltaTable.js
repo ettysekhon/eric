@@ -13,6 +13,8 @@ import {
   TextMedium,
 } from './Text';
 
+import CardContent from './CardContent';
+
 import styles from './Styles/SummaryDeltaTableStyles';
 
 import {
@@ -86,18 +88,20 @@ const SummaryDeltaTable = ({ data }) => {
     );
   });
   return (
-    <View>
-      <View style={[styles.row]}>
-        {
-          header
-        }
+    <CardContent>
+      <View>
+        <View style={[styles.row]}>
+          {
+            header
+          }
+        </View>
+        <View style={[styles.row]}>
+          {
+            values
+          }
+        </View>
       </View>
-      <View style={[styles.row]}>
-        {
-          values
-        }
-      </View>
-    </View>
+    </CardContent>
   );
 };
 

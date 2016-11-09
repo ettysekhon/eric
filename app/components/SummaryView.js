@@ -91,6 +91,7 @@ class SummaryView extends Component {
             <SummaryCard
               delta={card.delta}
               key={index}
+              orientation={this.props.orientation}
               tables={card.tables}
             />
           );
@@ -117,6 +118,7 @@ SummaryView.propTypes = {
   error: PropTypes.bool,
   getSummary: PropTypes.func,
   isLoading: PropTypes.bool.isRequired,
+  orientation: PropTypes.string,
   /* eslint-disable react/forbid-prop-types */
   summary: PropTypes.object
   /* eslint-enable react/forbid-prop-types */
@@ -127,6 +129,7 @@ export default connect((state, ownProps) => {
     error: state.summary.error,
     isLoading: state.summary.isLoading,
     navigator: ownProps.navigator,
+    orientation: state.orientation.orientation,
     summary: state.summary.data
   };
 }, (dispatch) => {
