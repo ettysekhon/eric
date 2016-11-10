@@ -9,6 +9,7 @@ import {
   View
 } from 'react-native';
 
+import { Colors } from '../theme/';
 import styles from './Styles/SummaryTablesStyles';
 import images from '../theme/Images';
 
@@ -72,6 +73,7 @@ class SummaryTables extends Component {
         onPress: this.onIconClick
       } : null;
       const primaryTable = index === 0;
+      const headingText = primaryTable ? { color: Colors.primaryDark } : null;
       return (!this.state.isExpanded && !primaryTable)
         ? null
         : (
@@ -83,7 +85,7 @@ class SummaryTables extends Component {
               {...props}
             >
               <Heading4
-                style={styles.heading}
+                style={[styles.heading, headingText]}
               >{table.title}
               </Heading4>
             </CardContent>

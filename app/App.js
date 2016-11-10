@@ -16,6 +16,8 @@ import Navigator from './Navigator';
 
 import updateOrientation from './actions/orientation';
 
+let currentOrientation = 'PORTRAIT';
+
 class App extends Component {
   constructor() {
     super();
@@ -24,7 +26,10 @@ class App extends Component {
   onLayout(e) {
     const { width, height } = e.nativeEvent.layout;
     const orientation = (width > height) ? 'LANDSCAPE' : 'PORTRAIT';
-    this.props.updateOrientation(orientation);
+    if (currentOrientation !== orientation) {
+      this.props.updateOrientation(orientation);
+    }
+    currentOrientation = orientation;
   }
   render() {
     return (

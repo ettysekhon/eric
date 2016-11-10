@@ -52,6 +52,25 @@ class SummaryView extends Component {
         return false;
       }
     }
+
+    const currentMetrics = (this.state.summary && this.state.summary.subTitle) || '';
+    const nextMetrics = (nextProps.summary && nextProps.summary.subTitle) || '';
+    const currentOrientation = this.props.orientation;
+    const nextOrientation = nextProps.orientation;
+    const currentRefreshing = this.state.isRefreshing;
+    const nextRefreshing = nextState.isRefreshing;
+    const currentLoading = this.props.isLoading;
+    const nextLoading = nextProps.isLoading;
+    const currentError = this.props.error;
+    const nextError = nextProps.error;
+    if (currentMetrics === nextMetrics
+      && currentOrientation === nextOrientation
+      && currentRefreshing === nextRefreshing
+      && currentLoading === nextLoading
+      && currentError === nextError) {
+      return false;
+    }
+
     return true;
   }
   onRefresh() {

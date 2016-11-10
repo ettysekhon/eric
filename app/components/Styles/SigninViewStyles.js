@@ -20,6 +20,7 @@ export default StyleSheet.create({
   link: {
     color: Colors.grayLight,
     letterSpacing: normalize(2),
+    fontSize: normalize(14),
     marginBottom: 10,
     alignSelf: 'center',
     fontFamily: 'Montserrat-Regular'

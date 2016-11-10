@@ -1,40 +1,112 @@
 {
-  "title": "TUESDAY",
-  "subTitle": "18:00, 08 Nov 2016",
-  "headers": [
-    "08 Nov 2016",
-    "01 Nov 2016",
-    "WoW",
-    "10 Nov 2015",
-    "YoY",
-    "03 Nov 2015",
-    "YoY(Adj)"
-  ],
-  "deltaHeaders": [
-    "WoW",
-    "YoY",
-    "YoY(DA)"
-  ],
+  "title": "THURSDAY",
+  "subTitle": "12:00, 10 Nov 2016",
   "data": [
     {
       "tables": [
         {
           "title": "HOURLY UNIQUE VISITORS",
           "data": [
-            561039,
-            527121,
-            6.43,
-            502113,
-            11.74,
-            469592,
-            12.25
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "233,359",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "234,524",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-0.5%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "211,604",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "10.28%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "194,339",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "20.68%",
+                "isHeader": false
+              }
+            ]
           ]
         }
       ],
       "delta": [
-        6.43,
-        11.74,
-        12.25
+        {
+          "title": "WoW",
+          "value": "-0.5%",
+          "up": false
+        },
+        {
+          "title": "YoY",
+          "value": "10.28%",
+          "up": true
+        },
+        {
+          "title": "YoY(Prev Week)",
+          "value": "20.68%",
+          "up": true
+        }
       ]
     },
     {
@@ -42,56 +114,364 @@
         {
           "title": "TOTAL ORDERS",
           "data": [
-            10824,
-            10420,
-            3.88,
-            9638,
-            12.31,
-            9207,
-            13.17
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "4,204",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "4,504",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-6.66%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "3,702",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "13.56%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "3,490",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "29.05%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "HOME DELIVERY ORDERS",
           "data": [
-            6149,
-            5814,
-            5.76,
-            5495,
-            11.9,
-            4916,
-            18.27
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "2,289",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "2,301",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-0.52%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "1,874",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "22.15%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "1,661",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "38.53%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "RESERVATION ORDERS",
           "data": [
-            3544,
-            3542,
-            0.06,
-            3467,
-            2.22,
-            3505,
-            1.06
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "1,590",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "1,857",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-14.38%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "1,602",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-0.75%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "1,590",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "16.79%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "PAY COLLECT ORDERS",
           "data": [
-            1131,
-            1064,
-            6.3,
-            676,
-            67.31,
-            786,
-            35.37
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "325",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "346",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-6.07%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "226",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "43.81%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "239",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "44.77%",
+                "isHeader": false
+              }
+            ]
           ]
         }
       ],
       "delta": [
-        3.88,
-        12.31,
-        13.17
+        {
+          "title": "WoW",
+          "value": "-6.66%",
+          "up": false
+        },
+        {
+          "title": "YoY",
+          "value": "13.56%",
+          "up": true
+        },
+        {
+          "title": "YoY(Prev Week)",
+          "value": "29.05%",
+          "up": true
+        }
       ]
     },
     {
@@ -99,56 +479,364 @@
         {
           "title": "TOTAL REVENUE",
           "data": [
-            2774785,
-            2600813,
-            6.69,
-            2107997,
-            31.63,
-            1952831,
-            33.18
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "989,279",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "1,110,176",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-10.89%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "828,518",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "19.4%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "790,189",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "40.49%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "HOME DELIVERY REVENUE",
           "data": [
-            1696629.84,
-            1558622.18,
-            8.85,
-            1309273.35,
-            29.59,
-            1173704.14,
-            32.8
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "600,585.52",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "615,804.2",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-2.47%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "458,968.62",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "30.86%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "454,851.42",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "35.39%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "RESERVATION REVENUE",
           "data": [
-            832458,
-            800425,
-            4,
-            680111,
-            22.4,
-            643136,
-            24.46
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "331,772",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "413,254",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-19.72%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "324,911",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "2.11%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "291,721",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "41.66%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "PAY COLLECT REVENUE",
           "data": [
-            245694,
-            241766,
-            1.62,
-            118610,
-            107.14,
-            135992,
-            77.78
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "56,922",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "81,119",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-29.83%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "44,642",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "27.51%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "43,617",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "85.98%",
+                "isHeader": false
+              }
+            ]
           ]
         }
       ],
       "delta": [
-        6.69,
-        31.63,
-        33.18
+        {
+          "title": "WoW",
+          "value": "-10.89%",
+          "up": false
+        },
+        {
+          "title": "YoY",
+          "value": "19.4%",
+          "up": true
+        },
+        {
+          "title": "YoY(Prev Week)",
+          "value": "40.49%",
+          "up": true
+        }
       ]
     },
     {
@@ -156,56 +844,364 @@
         {
           "title": "TOTAL AOV",
           "data": [
-            9516.6,
-            9928.64,
-            -4.15,
-            7007.68,
-            35.8,
-            6909.22,
-            43.7
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "6,074.45",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "6,061.64",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "0.21%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "5,448.44",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "11.49%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "5,337.76",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "13.56%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "HOME DELIVERY AOV",
           "data": [
-            10360.24,
-            9274.79,
-            11.7,
-            7003.66,
-            47.93,
-            7787.52,
-            19.1
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "6,186.79",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "6,266.35",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-1.27%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "5,836.86",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "6%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "5,829.52",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "7.49%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "RESERVATION AOV",
           "data": [
-            8152.79,
-            9760.42,
-            -16.47,
-            6677.1,
-            22.1,
-            5903.96,
-            65.32
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "5,381.28",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "4,991.16",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "7.82%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "5,024.54",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "7.1%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "4,696.31",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "6.28%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "PAY COLLECT AOV",
           "data": [
-            7610.15,
-            8233.33,
-            -7.57,
-            6182.55,
-            23.09,
-            5607.66,
-            46.82
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "3,876.84",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "6,993.18",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-44.56%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "3,420.79",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "13.33%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "4,851.86",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "44.13%",
+                "isHeader": false
+              }
+            ]
           ]
         }
       ],
       "delta": [
-        -4.15,
-        35.8,
-        43.7
+        {
+          "title": "WoW",
+          "value": "0.21%",
+          "up": true
+        },
+        {
+          "title": "YoY",
+          "value": "11.49%",
+          "up": true
+        },
+        {
+          "title": "YoY(Prev Week)",
+          "value": "13.56%",
+          "up": true
+        }
       ]
     },
     {
@@ -213,56 +1209,364 @@
         {
           "title": "TOTAL CONVERSION",
           "data": [
-            48.06,
-            50.69,
-            -5.19,
-            51.41,
-            -6.52,
-            51.37,
-            -1.32
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "28.4",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "28.78",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-1.32%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "27.08",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "4.87%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "28.61",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "0.59%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "HOME DELIVERY CONVERSION",
           "data": [
-            25.66,
-            25.78,
-            -0.47,
-            26.37,
-            -2.69,
-            25,
-            3.12
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "14",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "13.98",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "0.14%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "11.94",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "17.25%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "12.04",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "16.11%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "RESERVATION CONVERSION",
           "data": [
-            17.65,
-            19.87,
-            -11.17,
-            21.4,
-            -17.52,
-            21.74,
-            -8.6
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "12.17",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "12.43",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-2.09%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "13.24",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-8.08%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "13.87",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-10.38%",
+                "isHeader": false
+              }
+            ]
           ]
         },
         {
           "title": "PAY COLLECT CONVERSION",
           "data": [
-            4.75,
-            5.04,
-            -5.75,
-            3.64,
-            30.49,
-            4.63,
-            8.86
+            [
+              {
+                "up": true,
+                "value": "10 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "03 Nov 2016",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "WoW",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "12 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "YoY",
+                "showDirection": true,
+                "isHeader": true
+              },
+              {
+                "up": true,
+                "value": "05 Nov 2015",
+                "showDirection": false,
+                "isHeader": true
+              },
+              {
+                "up": false,
+                "value": "YoY(Prev Week)",
+                "showDirection": true,
+                "isHeader": true
+              }
+            ],
+            [
+              {
+                "up": true,
+                "value": "2.23",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "2.37",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-5.91%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "1.9",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "17.37%",
+                "isHeader": false
+              },
+              {
+                "up": true,
+                "value": "2.69",
+                "isHeader": false
+              },
+              {
+                "up": false,
+                "value": "-11.9%",
+                "isHeader": false
+              }
+            ]
           ]
         }
       ],
       "delta": [
-        -5.19,
-        -6.52,
-        -1.32
+        {
+          "title": "WoW",
+          "value": "-1.32%",
+          "up": false
+        },
+        {
+          "title": "YoY",
+          "value": "4.87%",
+          "up": true
+        },
+        {
+          "title": "YoY(Prev Week)",
+          "value": "0.59%",
+          "up": true
+        }
       ]
     }
   ]

@@ -2,11 +2,15 @@ import {
   create,
 } from './StyleSheet';
 
+import {
+  normalize
+} from '../../utils/size';
+
 export default create({
   textInput: {
-    height: 50,
-    fontSize: 16,
-    padding: 10,
+    height: normalize(50),
+    fontSize: normalize(16),
+    padding: normalize(10),
     color: 'white',
     ios: {
       borderWidth: 1,

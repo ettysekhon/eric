@@ -1,7 +1,6 @@
 import ActionTypes from './types';
 import createAction from './createAction';
 import API from '../api';
-import mapper from '../api/mapper';
 
 const summaryRequest = createAction(ActionTypes.SUMMARY_REQUEST);
 const summarySuccess = createAction(ActionTypes.SUMMARY_SUCCESS);
@@ -14,7 +13,7 @@ const getSummary = (emailAddress) => {
     API.getSummary(auth.token)
     .then((payload) => {
       dispatch(summarySuccess({
-        summary: mapper(payload.summary)
+        summary: payload.summary
       }));
     }).catch((err) => {
       dispatch(summaryFailure(null, err));
