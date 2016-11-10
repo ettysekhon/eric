@@ -8,7 +8,7 @@ import {
 
 export default create({
   textInput: {
-    height: normalize(50),
+    height: normalize(45),
     fontSize: normalize(16),
     padding: normalize(10),
     color: 'white',
