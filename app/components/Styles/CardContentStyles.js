@@ -8,7 +8,7 @@ import {
 
 export default create({
   content: {
-    padding: normalize(13),
+    padding: normalize(15),
     android: {
       padding: normalize(18),
       backgroundColor: 'white',

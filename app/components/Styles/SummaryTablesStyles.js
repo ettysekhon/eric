@@ -17,7 +17,7 @@ export default create({
     top: normalize(10),
     left: normalize(5),
     ios: {
-      top: normalize(3),
+      top: normalize(5),
       left: normalize(-15),
     }
   },
