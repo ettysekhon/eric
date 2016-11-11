@@ -28,7 +28,6 @@ class SummaryView extends Component {
     this.onRefresh = this.onRefresh.bind(this);
   }
   componentDidMount() {
-    console.log('getSummary componentDidMount');
     InteractionManager.runAfterInteractions(() => {
       this.props.getSummary();
     });
@@ -84,7 +83,9 @@ class SummaryView extends Component {
     /* eslint-disable react/no-set-state */
     this.setState({ isRefreshing: true });
     /* eslint-enable react/no-set-state */
-    this.props.getSummary();
+    InteractionManager.runAfterInteractions(() => {
+      this.props.getSummary();
+    });
   }
   render() {
     const { error } = this.props;
