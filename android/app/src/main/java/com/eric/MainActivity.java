@@ -1,4 +1,4 @@
-package com.eric;
+package com.nexgenerationsolutions.eric;
 
 import com.facebook.react.ReactActivity;
 import com.oblador.vectoricons.VectorIconsPackage;

@@ -3,17 +3,9 @@ Add screen shots:
 iPhone:
 5.5 Inch Display:
   5 screen shots
-4.7 Inch Display:
-  5 screen shots
-4 Inch Display:
-  5 screen shots
-3.5 Inch Display:
-  5 screen shots
 
 iPad:
 12.9 Display:
-  3 Screens
-9.7 Display:
   3 Screens
 
 Description:
@@ -31,3 +23,20 @@ http://www.nexgeneration-solutions.com/
 Build
 
 App Icon
+
+Copyright
+NexGeneration Solutions Limited
+
+Trade Representative Contact Information
+  False
+
+Nexgeneration Solutions Limited
+Name Address
+
+App Review Information
+Contact Information
+Etty Sekhon
++44 7776242356
+info@nexgeneration-solutions.com
+
+Demo Account

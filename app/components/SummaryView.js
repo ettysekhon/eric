@@ -3,6 +3,10 @@ import React, {
   PropTypes
 } from 'react';
 
+import {
+  InteractionManager
+} from 'react-native';
+
 import { connect } from 'react-redux';
 
 import SummaryCard from './SummaryCard';
@@ -24,7 +28,10 @@ class SummaryView extends Component {
     this.onRefresh = this.onRefresh.bind(this);
   }
   componentDidMount() {
-    this.props.getSummary();
+    console.log('getSummary componentDidMount');
+    InteractionManager.runAfterInteractions(() => {
+      this.props.getSummary();
+    });
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.isLoading !== this.props.isLoading) {

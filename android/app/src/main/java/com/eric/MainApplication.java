@@ -1,4 +1,4 @@
-package com.eric;
+package com.nexgenerationsolutions.eric;
 
 import android.app.Application;
 import android.util.Log;
