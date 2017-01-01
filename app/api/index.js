@@ -11,7 +11,7 @@ const isAndroid = Platform.OS === 'android';
 // on android emulator use the following http://10.0.2.2:8082/api/
 
 const getEndpoint = (path) => {
-  const test = true;
+  const test = false;
   const localhost = isAndroid ? 'http://10.0.2.2:8082/api/' : 'http://localhost:8082/api/';
   const host = test === true
     ? localhost
