@@ -13,7 +13,7 @@ const Label = ({ text }) => {
     <Text
       style={styles.label}
     >{ text }</Text>
- );
+  );
 };
 
 Label.propTypes = {

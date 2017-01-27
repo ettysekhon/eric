@@ -5,17 +5,21 @@ import ActionTypes from '../actions/types';
 const blankState = {
   error: false,
   isLoading: false,
-  data: {}
+  summary: {},
+  top10: []
 };
 
 const reducer = (state = blankState, action) => {
   switch (action.type) {
-  case ActionTypes.SUMMARY_REQUEST:
+  case ActionTypes.ADOBE_REQUEST:
     return objectAssign({}, blankState, { isLoading: true });
-  case ActionTypes.SUMMARY_FAILURE:
+  case ActionTypes.ADOBEFAILURE:
     return objectAssign({}, blankState, { error: true });
-  case ActionTypes.SUMMARY_SUCCESS:
-    return objectAssign({}, blankState, { data: action.payload.summary });
+  case ActionTypes.ADOBE_SUCCESS:
+    return objectAssign({}, blankState, {
+      summary: action.payload.summary,
+      top10: action.payload.top10
+    });
   default:
     return state;
   }

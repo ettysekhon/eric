@@ -14,6 +14,7 @@ import {
 } from './Text';
 
 import CardContent from './CardContent';
+import EmptyCardContent from './EmptyCardContent';
 
 import styles from './Styles/SummaryDeltaTableStyles';
 
@@ -68,6 +69,9 @@ const Cell = ({ cell, isHeader, up, style }) => {
 };
 
 const SummaryDeltaTable = ({ data }) => {
+  if (data.length === 0) {
+    return <EmptyCardContent />;
+  }
   const header = data.map((cell, index) => {
     return (
       <Cell
@@ -108,7 +112,9 @@ const SummaryDeltaTable = ({ data }) => {
 SummaryDeltaTable.displayName = 'SummaryDeltaTable';
 
 SummaryDeltaTable.propTypes = {
-  data: PropTypes.array
+  /* eslint-disable react/forbid-prop-types */
+  data: PropTypes.array.isRequired
+  /* eslint-enable react/forbid-prop-types */
 };
 
 export default SummaryDeltaTable;

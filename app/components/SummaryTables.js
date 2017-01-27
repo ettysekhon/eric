@@ -20,13 +20,18 @@ import {
 import SummaryTable from './SummaryTable';
 import CardContent from './CardContent';
 
-const getData = (data, orientation) => {
+const getData = (type, data, orientation) => {
   if (orientation !== 'PORTRAIT') {
     return data;
   }
   const ret = data.map((row) => {
+    if (type === 'SUMMARY') {
+      return row.filter((cell, i) => {
+        return i === 0 || i === 1 || i === 3 || i === 5;
+      });
+    }
     return row.filter((cell, i) => {
-      return i === 0 || i === 1 || i === 3 || i === 5;
+      return i < 2;
     });
   });
   return ret;
@@ -66,7 +71,7 @@ class SummaryTables extends Component {
   }
   render() {
     const tables = this.props.tables.map((table, index, array) => {
-      const data = getData(table.data, this.props.orientation);
+      const data = getData(this.props.type, table.data, this.props.orientation);
       const canRenderIcon = index === 0 && array.length > 1;
       const icon = getIcon(this.state.isExpanded, canRenderIcon, this.onIconClick);
       const props = canRenderIcon ? {
@@ -107,7 +112,8 @@ SummaryTables.displayName = 'SummaryTables';
 
 SummaryTables.propTypes = {
   orientation: PropTypes.string,
-  tables: PropTypes.array
+  tables: PropTypes.array,
+  type: PropTypes.string
 };
 
 export default SummaryTables;

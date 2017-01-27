@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import authReducer from './auth';
-import summaryReducer from './summary';
+import adobeReducer from './adobe';
 import orientationReducer from './orientation';
 
 export default combineReducers({
+  adobe: adobeReducer,
   auth: authReducer,
-  orientation: orientationReducer,
-  summary: summaryReducer
+  orientation: orientationReducer
 });

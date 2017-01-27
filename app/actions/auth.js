@@ -54,7 +54,13 @@ export const signIn = (emailAddress, navigator) => {
           {
             text: 'OK',
             onPress: () => {
-              return console.log('OK Pressed!');
+              if (navigator) {
+                requestAnimationFrame(() => {
+                  return navigator.push({
+                    route: routes.SIGNIN
+                  });
+                });
+              }
             }
           }
         ]
@@ -66,8 +72,9 @@ export const signIn = (emailAddress, navigator) => {
 export const login = (password, navigator) => {
   return (dispatch, getState) => {
     const { auth } = getState();
+    const { emailAddress } = auth;
     dispatch(loginRequest());
-    API.login(password, auth.token)
+    API.login(emailAddress, password, auth.token)
     .then((payload) => {
       if (navigator) {
         requestAnimationFrame(() => {
@@ -88,7 +95,13 @@ export const login = (password, navigator) => {
           {
             text: 'OK',
             onPress: () => {
-              return console.log('OK Pressed!');
+              if (navigator) {
+                requestAnimationFrame(() => {
+                  return navigator.push({
+                    route: routes.SIGNIN
+                  });
+                });
+              }
             }
           }
         ]

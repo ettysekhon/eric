@@ -11,9 +11,9 @@ const isAndroid = Platform.OS === 'android';
 // on android emulator use the following http://10.0.2.2:8082/api/
 
 const getEndpoint = (path) => {
-  const test = false;
+  const test = true;
   const localhost = isAndroid ? 'http://10.0.2.2:8082/api/' : 'http://localhost:8082/api/';
-  const host = test === true
+  const host = test === false
     ? localhost
     : 'http://eric.kicks-ass.org/api/';
   return `${host}${path}`;
@@ -103,15 +103,16 @@ const signIn = (emailAddress, token) => {
   });
 };
 
-const login = (password, token) => {
+const login = (emailAddress, password, token) => {
   return post(getEndpoint('login'), {
+    emailAddress,
     password,
     token
   });
 };
 
-const getSummary = (token) => {
-  return post(getEndpoint('summary'), {
+const getAdobe = (token) => {
+  return post(getEndpoint('adobe'), {
     token
   });
 };
@@ -119,5 +120,5 @@ const getSummary = (token) => {
 export default {
   signIn,
   login,
-  getSummary
+  getAdobe
 };

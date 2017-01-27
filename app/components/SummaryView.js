@@ -10,12 +10,14 @@ import {
 import { connect } from 'react-redux';
 
 import SummaryCard from './SummaryCard';
+import Tabs from './Tabs';
 import Content from './Content';
 import Container from './Container';
 import Header from './Header';
 import ModalSpinner from './ModalSpinner';
 import MessageView from './MessageView';
-import getSummary from '../actions/summary';
+import getAdobe from '../actions/adobe';
+import routes from '../utils/routes';
 
 class SummaryView extends Component {
   constructor(props) {
@@ -23,31 +25,41 @@ class SummaryView extends Component {
     this.state = {
       isRefreshing: false,
       isLoading: false,
-      summary: {}
+      summary: {},
+      top10: [],
+      tabs: ['SUMMARY', 'TOP 10'],
+      activeTab: 'SUMMARY'
     };
     this.onRefresh = this.onRefresh.bind(this);
+    this.onTabPress = this.onTabPress.bind(this);
   }
   componentDidMount() {
     InteractionManager.runAfterInteractions(() => {
-      this.props.getSummary();
+      this.props.getAdobe();
     });
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.isLoading !== this.props.isLoading) {
       if (this.state.isRefreshing === false) {
+        /* eslint-disable react/no-set-state */
         this.setState({
           isLoading: nextProps.isLoading,
-          summary: nextProps.summary
+          summary: nextProps.summary,
+          top10: nextProps.top10
         });
+        /* eslint-enable react/no-set-state */
       }
 
       if (this.state.isRefreshing === true) {
         if (nextProps.isLoading === false) {
+          /* eslint-disable react/no-set-state */
           this.setState({
             isRefreshing: false,
             isLoading: false,
-            summary: nextProps.summary
+            summary: nextProps.summary,
+            top10: nextProps.top10
           });
+          /* eslint-enable react/no-set-state */
         }
       }
     }
@@ -69,11 +81,14 @@ class SummaryView extends Component {
     const nextLoading = nextProps.isLoading;
     const currentError = this.props.error;
     const nextError = nextProps.error;
+    const currentActiveTab = this.state.activeTab;
+    const nextActiveTab = nextState.activeTab;
     if (currentMetrics === nextMetrics
       && currentOrientation === nextOrientation
       && currentRefreshing === nextRefreshing
       && currentLoading === nextLoading
-      && currentError === nextError) {
+      && currentError === nextError
+      && currentActiveTab === nextActiveTab) {
       return false;
     }
 
@@ -84,25 +99,94 @@ class SummaryView extends Component {
     this.setState({ isRefreshing: true });
     /* eslint-enable react/no-set-state */
     InteractionManager.runAfterInteractions(() => {
-      this.props.getSummary();
+      this.props.getAdobe();
     });
+  }
+  onTabPress(tab) {
+    /* eslint-disable react/no-set-state */
+    this.setState({ activeTab: tab });
+    /* eslint-enable react/no-set-state */
   }
   render() {
     const { error } = this.props;
     const summary = this.state.summary;
+    const top10 = this.state.top10;
     const data = summary.data || [];
     const errorMessage = 'Howdy! Looks like you are hiding in a cave. Please connect to the internet and try again.';
     const onRefresh = this.onRefresh;
+    const summaryCards = data.map((card, index) => {
+      return (
+        <SummaryCard
+          delta={card.delta}
+          key={index}
+          orientation={this.props.orientation}
+          tables={card.tables}
+          type={'SUMMARY'}
+        />
+      );
+    });
+    const tabs = (
+      <Tabs
+        activeTab={this.state.activeTab}
+        onPress={this.onTabPress}
+        tabs={this.state.tabs}
+      />
+    );
+    const summaryContent = this.state.activeTab === 'SUMMARY' ? (
+      <Content
+        isRefreshing={this.state.isRefreshing}
+        onRefresh={onRefresh}
+      >
+        {(data.length > 0)
+          ? tabs
+          : null
+        }
+        {
+          summaryCards
+        }
+      </Content>) : (
+        <Content
+          isRefreshing={this.state.isRefreshing}
+          onRefresh={onRefresh}
+        >
+          {(data.length > 0)
+            ? tabs
+            : null
+          }
+          {
+            top10.map((card, index) => {
+              return (
+                <SummaryCard
+                  delta={card.delta}
+                  key={index}
+                  orientation={this.props.orientation}
+                  tables={card.tables}
+                  type={'TOP 10'}
+                />
+              );
+            })
+          }
+        </Content>
+    );
+
     const content = error
       ? (
         <MessageView
+          alternateButtonOnPress={() => {
+            requestAnimationFrame(() => {
+              return this.props.navigator.push({
+                route: routes.SIGNIN
+              });
+            });
+          }}
+          alternateButtonText={'SIGNIN'}
           buttonIsDisabled={this.state.isLoading}
           buttonIsLoading={this.state.isLoading}
           buttonOnPress={() => {
             /* eslint-disable react/no-set-state */
             this.setState({ canSubmit: false });
             /* eslint-enable react/no-set-state */
-            this.props.getSummary();
+            this.props.getAdobe();
           }}
           buttonText={'RETRY'}
           icon={'refresh'}
@@ -113,16 +197,9 @@ class SummaryView extends Component {
         isRefreshing={this.state.isRefreshing}
         onRefresh={onRefresh}
       >
-        {data.map((card, index) => {
-          return (
-            <SummaryCard
-              delta={card.delta}
-              key={index}
-              orientation={this.props.orientation}
-              tables={card.tables}
-            />
-          );
-        })}
+        {
+          summaryContent
+        }
       </Content>);
     return (
       <Container>
@@ -143,26 +220,27 @@ class SummaryView extends Component {
 
 SummaryView.propTypes = {
   error: PropTypes.bool,
-  getSummary: PropTypes.func,
+  getAdobe: PropTypes.func,
   isLoading: PropTypes.bool.isRequired,
-  orientation: PropTypes.string,
   /* eslint-disable react/forbid-prop-types */
-  summary: PropTypes.object
+  navigator: PropTypes.object,
+  orientation: PropTypes.string
   /* eslint-enable react/forbid-prop-types */
 };
 
 export default connect((state, ownProps) => {
   return {
-    error: state.summary.error,
-    isLoading: state.summary.isLoading,
+    error: state.adobe.error,
+    isLoading: state.adobe.isLoading,
     navigator: ownProps.navigator,
     orientation: state.orientation.orientation,
-    summary: state.summary.data
+    summary: state.adobe.summary,
+    top10: state.adobe.top10
   };
 }, (dispatch) => {
   return {
-    getSummary: () => {
-      dispatch(getSummary());
+    getAdobe: () => {
+      dispatch(getAdobe());
     }
   };
 })(SummaryView);

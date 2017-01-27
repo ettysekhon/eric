@@ -8,9 +8,9 @@ module.exports = {
   LOGIN_REQUEST: 'LOGIN_REQUEST',
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   // -------------------------------------------------------------------------->
-  SUMMARY_FAILURE: 'SUMMARY_FAILURE',
-  SUMMARY_REQUEST: 'SUMMARY_REQUEST',
-  SUMMARY_SUCCESS: 'SUMMARY_SUCCESS',
+  ADOBE_FAILURE: 'ADOBE_FAILURE',
+  ADOBE_REQUEST: 'ADOBE_REQUEST',
+  ADOBE_SUCCESS: 'ADOBE_SUCCESS',
   // SYNC.
   // -------------------------------------------------------------------------->
   LOGOUT: 'LOGOUT',

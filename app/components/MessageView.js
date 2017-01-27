@@ -17,12 +17,25 @@ import { Colors } from '../theme/';
 
 const MessageView = (props) => {
   const {
+    alternateButtonOnPress,
+    alternateButtonText,
     buttonIsDisabled,
     buttonIsLoading,
     buttonText,
     buttonOnPress,
     icon,
     message } = props;
+  const alternateButton = alternateButtonOnPress
+    ? (
+      <ButtonEric
+        onPress={alternateButtonOnPress}
+        style={{
+          backgroundColor: '#7ED321'
+        }}
+      >
+        {alternateButtonText}
+      </ButtonEric>)
+    : null;
   return (
     <View
       style={{
@@ -52,6 +65,9 @@ const MessageView = (props) => {
       >
         {buttonText}
       </ButtonEric>
+      {
+        alternateButton
+      }
     </View>
   );
 };
@@ -59,6 +75,8 @@ const MessageView = (props) => {
 MessageView.displayName = 'MessageView';
 
 MessageView.propTypes = {
+  alternateButtonOnPress: PropTypes.func,
+  alternateButtonText: PropTypes.string,
   buttonIsDisabled: PropTypes.bool,
   buttonIsLoading: PropTypes.bool,
   buttonText: PropTypes.string,

@@ -31,6 +31,9 @@ const reducer = (state = blankState, action) => {
       emailAddress: action.payload.emailAddress,
       token: action.payload.token,
       bootstrapped: true };
+  case ActionTypes.SUMMARY_SUCCESS:
+    return { ...state,
+      token: action.payload.token };
   case ActionTypes.LOGIN_REQUEST:
     return { ...state,
       isLoading: true,
