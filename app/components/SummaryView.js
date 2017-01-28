@@ -109,12 +109,12 @@ class SummaryView extends Component {
   }
   render() {
     const { error } = this.props;
-    const summary = this.state.summary;
-    const top10 = this.state.top10;
-    const data = summary.data || [];
+    const { subTitle, title } = this.state.summary;
+    const summary = this.state.summary.data || [];
+    const top10 = this.state.top10 || [];
     const errorMessage = 'Howdy! Looks like you are hiding in a cave. Please connect to the internet and try again.';
     const onRefresh = this.onRefresh;
-    const summaryCards = data.map((card, index) => {
+    const summaryCards = summary.map((card, index) => {
       return (
         <SummaryCard
           delta={card.delta}
@@ -125,6 +125,17 @@ class SummaryView extends Component {
         />
       );
     });
+    const top10Cards = top10.map((card, index) => {
+      return (
+        <SummaryCard
+          delta={card.delta}
+          key={index}
+          orientation={this.props.orientation}
+          tables={card.tables}
+          type={'TOP 10'}
+        />
+      );
+    });
     const tabs = (
       <Tabs
         activeTab={this.state.activeTab}
@@ -132,42 +143,9 @@ class SummaryView extends Component {
         tabs={this.state.tabs}
       />
     );
-    const summaryContent = this.state.activeTab === 'SUMMARY' ? (
-      <Content
-        isRefreshing={this.state.isRefreshing}
-        onRefresh={onRefresh}
-      >
-        {(data.length > 0)
-          ? tabs
-          : null
-        }
-        {
-          summaryCards
-        }
-      </Content>) : (
-        <Content
-          isRefreshing={this.state.isRefreshing}
-          onRefresh={onRefresh}
-        >
-          {(data.length > 0)
-            ? tabs
-            : null
-          }
-          {
-            top10.map((card, index) => {
-              return (
-                <SummaryCard
-                  delta={card.delta}
-                  key={index}
-                  orientation={this.props.orientation}
-                  tables={card.tables}
-                  type={'TOP 10'}
-                />
-              );
-            })
-          }
-        </Content>
-    );
+    const tabContent = this.state.activeTab === 'SUMMARY'
+      ? summaryCards
+      : top10Cards;
 
     const content = error
       ? (
@@ -197,15 +175,19 @@ class SummaryView extends Component {
         isRefreshing={this.state.isRefreshing}
         onRefresh={onRefresh}
       >
+        {(summary.length > 0)
+          ? tabs
+          : null
+        }
         {
-          summaryContent
+          tabContent
         }
       </Content>);
     return (
       <Container>
         <Header
-          subTitle={summary.subTitle}
-          title={summary.title}
+          subTitle={subTitle}
+          title={title}
         />
         <ModalSpinner
           visible={this.state.isLoading}

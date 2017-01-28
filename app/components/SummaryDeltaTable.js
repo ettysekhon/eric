@@ -22,6 +22,7 @@ import {
   normalize
 } from '../utils/size';
 
+/* eslint-disable react/prop-types */
 const HeaderCell = ({ cell, up }) => {
   const direction = up ? 'long-arrow-up' : 'long-arrow-down';
   const arrowColor = up ? 'green' : 'red';
@@ -67,6 +68,7 @@ const Cell = ({ cell, isHeader, up, style }) => {
     </View>
   );
 };
+/* eslint-enable react/prop-types */
 
 const SummaryDeltaTable = ({ data }) => {
   if (data.length === 0) {

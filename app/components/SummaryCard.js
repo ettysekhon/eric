@@ -29,8 +29,10 @@ SummaryCard.displayName = 'SummaryCard';
 
 SummaryCard.propTypes = {
   orientation: PropTypes.string,
+  /* eslint-disable react/forbid-prop-types */
   delta: PropTypes.array,
   tables: PropTypes.array,
+  /* eslint-enable react/forbid-prop-types */
   type: PropTypes.string
 };
 

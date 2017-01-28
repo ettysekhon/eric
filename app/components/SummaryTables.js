@@ -112,7 +112,9 @@ SummaryTables.displayName = 'SummaryTables';
 
 SummaryTables.propTypes = {
   orientation: PropTypes.string,
+  /* eslint-disable react/forbid-prop-types */
   tables: PropTypes.array,
+  /* eslint-enable react/forbid-prop-types */
   type: PropTypes.string
 };
 

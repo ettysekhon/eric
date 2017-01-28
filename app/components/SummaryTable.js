@@ -24,6 +24,7 @@ import {
 import { Colors } from '../theme/';
 import styles from './Styles/SummaryTableStyles';
 
+/* eslint-disable react/prop-types */
 const Arrow = ({ up }) => {
   const direction = up ? 'long-arrow-up' : 'long-arrow-down';
   const arrowColor = up ? 'green' : 'red';
@@ -83,6 +84,7 @@ const Row = ({ row, style }) => {
     </View>
   );
 };
+/* eslint-enable react/prop-types */
 
 const Table = ({ data }) => {
   const rows = data.map((row, index) => {

@@ -6,8 +6,13 @@ import {
 import {
   Platform
 } from 'react-native';
-
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies */
 import Orientation from 'react-native-orientation';
+/* eslint-enable import/no-extraneous-dependencies */
+/* eslint-enable import/no-unresolved */
+/* eslint-enable import/extensions */
 
 import { connect } from 'react-redux';
 
