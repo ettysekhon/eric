@@ -120,7 +120,20 @@ Now if you go to parse dashboard (remember to refresh) you should see a new clas
 If that is true, you should be able to send push notifications through parse dashboard UI and receive them in your device.
 
 
+http://0.0.0.0:4040/apps/MyApp/push/new
+
 ### Links
-1. http://absurd.tech/parse-server-react-native-push/
-2. https://github.com/zo0r/react-native-push-notification/blob/master/trouble-shooting.md
+http://stackoverflow.com/questions/36169806/how-to-configure-push-notifications-on-parse-server
+https://github.com/ParsePlatform/parse-server/wiki/Push
+https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide
+https://parseplatform.github.io//docs/parse-server/guide/#configuring-file-adapters
+http://absurd.tech/parse-server-react-native-push/
+https://github.com/zo0r/react-native-push-notification/blob/master/trouble-shooting.md
+http://stackoverflow.com/questions/29683720/react-native-push-notifications-parse
+https://github.com/nikhilaravi/react-native-push-notifications-tutorial
+https://github.com/ParsePlatform/Parse-Server/wiki/Push-Configuring-Clients
+https://github.com/ParsePlatform/parse-server/wiki/Push#quick-start
+http://parseplatform.github.io/docs/rest/guide/#push-notification
+https://parseplatform.github.io/docs/parse-server/guide/#configuring-your-clients-to-receive-push-notifications
+http://blog.parse.com/announcements/parse-server-push-notifications/
 ### F8App implementation analysis:

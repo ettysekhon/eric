@@ -106,8 +106,8 @@ const Table = ({ data }) => {
         Colors.secondaryGradientStart,
         Colors.secondaryGradientEnd
       ]}
-      end={[1.0, 0.0]}
-      start={[0.0, 0.0]}
+      end={{ x: 1.0, y: 0.0 }}
+      start={{ x: 0.0, y: 0.00 }}
       style={styles.gradient}
     >
       {

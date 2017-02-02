@@ -115,3 +115,17 @@ Early Reporting Information Centre
   * use rnpm link for fonts
 
 ## VPP
+
+## Upgrades issues
+android/app/src/main/java/com/eric/MainApplication.java
+android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+ios/Eric.xcodeproj/project.pbxproj
+ios/Eric.xcodeproj/xcshareddata/xcschemes/Eric.xcscheme
+ios/Eric.xcodeproj/xcshareddata/xcschemes/Eric.xcscheme
+ios/Eric/AppDelegate.m
