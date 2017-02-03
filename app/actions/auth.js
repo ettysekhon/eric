@@ -1,6 +1,7 @@
 import {
   Alert
 } from 'react-native';
+import objectAssign from 'object-assign';
 
 import ActionTypes from './types';
 import createAction from './createAction';
@@ -16,15 +17,16 @@ const loginRequest = createAction(ActionTypes.LOGIN_REQUEST);
 const loginSuccess = createAction(ActionTypes.LOGIN_SUCCESS);
 const loginFailure = createAction(ActionTypes.LOGIN_FAILURE);
 
-const saveItem = (key, value) => {
-  setItem(key, value);
+const saveAppState = (state) => {
+  setItem('APP_STATE', state);
 };
 
+// TODO: change to signUp
 export const signIn = (emailAddress, navigator) => {
   return (dispatch, getState) => {
-    const { auth } = getState();
+    const { app } = getState();
     dispatch(signInRequest());
-    API.signIn(emailAddress, auth.token)
+    API.signIn(emailAddress, app.token)
     .then((payload) => {
       if (navigator) {
         requestAnimationFrame(() => {
@@ -37,16 +39,16 @@ export const signIn = (emailAddress, navigator) => {
           token: payload.token
         }));
       }
-      saveItem('CREDENTIALS', {
+      saveAppState(objectAssign({}, app, {
         emailAddress,
         token: payload.token
-      });
+      }));
     }).catch((err) => {
       dispatch(signInFailure(null, err));
-      saveItem('CREDENTIALS', {
+      saveAppState(objectAssign({}, app, {
         emailAddress: '',
         token: ''
-      });
+      }));
       Alert.alert(
         'Error',
         'Looks like we have an issue signing you in. Please connect to the internet and try again.',
@@ -71,10 +73,10 @@ export const signIn = (emailAddress, navigator) => {
 
 export const login = (password, navigator) => {
   return (dispatch, getState) => {
-    const { auth } = getState();
-    const { emailAddress } = auth;
+    const { app } = getState();
+    const { emailAddress } = app;
     dispatch(loginRequest());
-    API.login(emailAddress, password, auth.token)
+    API.login(emailAddress, password, app.token)
     .then((payload) => {
       if (navigator) {
         requestAnimationFrame(() => {

@@ -96,10 +96,11 @@ const post = (url, body) => {
   });
 };
 
-const signIn = (emailAddress, token) => {
+const signIn = (emailAddress, token, deviceToken) => {
   return post(getEndpoint('signin'), {
     emailAddress,
-    token
+    token,
+    deviceToken
   });
 };
 
@@ -117,7 +118,14 @@ const getAdobe = (token) => {
   });
 };
 
+const notificationDevice = (deviceToken) => {
+  return post(getEndpoint('notification-device'), {
+    deviceToken
+  });
+};
+
 export default {
+  notificationDevice,
   signIn,
   login,
   getAdobe

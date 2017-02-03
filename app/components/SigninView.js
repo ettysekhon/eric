@@ -106,8 +106,8 @@ SignInView.propTypes = {
 
 const select = (state, ownProps) => {
   return {
-    emailAddress: state.auth.emailAddress,
-    isLoading: state.auth.isLoading,
+    emailAddress: state.app.emailAddress,
+    isLoading: state.app.isLoading,
     navigator: ownProps.navigator,
     orientation: state.orientation.orientation
   };

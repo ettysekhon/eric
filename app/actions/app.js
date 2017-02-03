@@ -7,20 +7,28 @@ const appBootstrap = createAction(ActionTypes.APP_BOOTSTRAP);
 
 export default (navigator) => {
   return (dispatch) => {
-    getItem('CREDENTIALS')
+    // get some initial state from storage
+    getItem('APP_STATE')
       .then((item) => {
-        let credentials = {
-          emailAddress: '',
-          token: ''
+        let appState = {
+          credentials: {
+            emailAddress: '',
+            token: ''
+          },
+          notifications: {
+            enabled: false
+          },
+          deviceToken: {}
         };
-        if (item) {
-          credentials = JSON.parse(item);
+        if (item && item.notifications && item.credentials) {
+          appState = JSON.parse(item);
         }
         dispatch(appBootstrap({
-          emailAddress: credentials.emailAddress,
-          token: credentials.token
+          emailAddress: appState.credentials.emailAddress,
+          token: appState.credentials.token,
+          notificationsEnabled: appState.notifications.enabled
         }));
-        const nextRoute = credentials.emailAddress
+        const nextRoute = appState.credentials.emailAddress
           ? routes.LOGIN
           : routes.SIGNIN;
         if (navigator) {

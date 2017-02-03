@@ -16,6 +16,8 @@ import Navigator from './Navigator';
 
 import updateOrientation from './actions/orientation';
 
+import PushNotificationController from './components/PushNotificationController';
+
 let currentOrientation = 'PORTRAIT';
 
 class App extends Component {
@@ -43,6 +45,7 @@ class App extends Component {
           translucent
         />
         <Navigator />
+        <PushNotificationController />
       </View>
     );
   }

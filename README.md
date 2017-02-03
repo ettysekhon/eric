@@ -129,3 +129,15 @@ ios/Eric.xcodeproj/project.pbxproj
 ios/Eric.xcodeproj/xcshareddata/xcschemes/Eric.xcscheme
 ios/Eric.xcodeproj/xcshareddata/xcschemes/Eric.xcscheme
 ios/Eric/AppDelegate.m
+
+# Other stuff
+
+See requests in dev tools
+---
+```
+const _XHR = GLOBAL.originalXMLHttpRequest ?  
+    GLOBAL.originalXMLHttpRequest :           
+    GLOBAL.XMLHttpRequest                     
+
+XMLHttpRequest = _XHR
+```

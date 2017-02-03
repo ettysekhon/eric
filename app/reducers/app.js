@@ -7,6 +7,7 @@ const blankState = {
   isLoading: false,
   emailAddress: '',
   loggedIn: false,
+  notificationsEnabled: false,
   token: ''
 };
 
@@ -16,22 +17,26 @@ const reducer = (state = blankState, action) => {
     return { ...blankState,
       emailAddress: action.payload.emailAddress,
       token: action.payload.token,
+      notificationsEnabled: action.payload.notificationsEnabled,
       bootstrapped: true };
+  case ActionTypes.NOTIFICATION_PERMISSION_CHANGE:
+    return { ...state,
+      notificationsEnabled: action.payload.notificationsEnabled };
   case ActionTypes.SIGNIN_REQUEST:
-    return { ...blankState,
+    return { ...state,
       isLoading: true,
       error: false,
       bootstrapped: true };
   case ActionTypes.SIGNIN_FAILURE:
-    return { ...blankState,
+    return { ...state,
       error: false,
       bootstrapped: true };
   case ActionTypes.SIGNIN_SUCCESS:
-    return { ...blankState,
+    return { ...state,
       emailAddress: action.payload.emailAddress,
       token: action.payload.token,
       bootstrapped: true };
-  case ActionTypes.SUMMARY_SUCCESS:
+  case ActionTypes.ADOBE_SUCCESS:
     return { ...state,
       token: action.payload.token };
   case ActionTypes.LOGIN_REQUEST:

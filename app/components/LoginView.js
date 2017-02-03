@@ -116,8 +116,8 @@ LoginView.propTypes = {
 
 const select = (state, ownProps) => {
   return {
-    error: state.auth.error,
-    isLoading: state.auth.isLoading,
+    error: state.app.error,
+    isLoading: state.app.isLoading,
     navigator: ownProps.navigator,
     orientation: state.orientation.orientation
   };

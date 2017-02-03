@@ -15,6 +15,8 @@ module.exports = {
   // -------------------------------------------------------------------------->
   LOGOUT: 'LOGOUT',
   ORIENTATION_CHANGE: 'ORIENTATION_CHANGE',
-  APP_BOOTSTRAP: 'APP_BOOTSTRAP'
+  APP_BOOTSTRAP: 'APP_BOOTSTRAP',
+  NOTIFICATION_PERMISSION_CHANGE: 'NOTIFICATION_PERMISSION_CHANGE',
+  STORE_DEVICE_TOKEN: 'STORE_DEVICE_TOKEN'
   // -------------------------------------------------------------------------->
 };

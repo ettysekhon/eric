@@ -47,7 +47,7 @@ LoadingAppView.propTypes = {
 
 export default connect((state, ownProps) => {
   return {
-    bootstrapped: state.auth.bootstrapped,
+    bootstrapped: state.app.bootstrapped,
     navigator: ownProps.navigator,
   };
 }, (dispatch) => {

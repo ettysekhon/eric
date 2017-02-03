@@ -8,9 +8,9 @@ const adobeFailure = createAction(ActionTypes.ADOBE_FAILURE);
 
 const getAdobe = (emailAddress) => {
   return (dispatch, getState) => {
-    const { auth } = getState();
+    const { app } = getState();
     dispatch(adobeRequest());
-    API.getAdobe(auth.token)
+    API.getAdobe(app.token)
     .then((payload) => {
       dispatch(adobeSuccess({
         summary: payload.summary,
