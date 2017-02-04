@@ -29,15 +29,18 @@ const reducer = (state = blankState, action) => {
       bootstrapped: true };
   case ActionTypes.SIGNIN_FAILURE:
     return { ...state,
+      isLoading: false,
       error: false,
       bootstrapped: true };
   case ActionTypes.SIGNIN_SUCCESS:
     return { ...state,
+      isLoading: false,
       emailAddress: action.payload.emailAddress,
       token: action.payload.token,
       bootstrapped: true };
   case ActionTypes.ADOBE_SUCCESS:
     return { ...state,
+      isLoading: false,
       token: action.payload.token };
   case ActionTypes.LOGIN_REQUEST:
     return { ...state,

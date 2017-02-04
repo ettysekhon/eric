@@ -11,24 +11,19 @@ export default (navigator) => {
     getItem('APP_STATE')
       .then((item) => {
         let appState = {
-          credentials: {
-            emailAddress: '',
-            token: ''
-          },
-          notifications: {
-            enabled: false
-          },
-          deviceToken: {}
+          emailAddress: '',
+          token: '',
+          notificationsEnabled: {}
         };
-        if (item && item.notifications && item.credentials) {
+        if (item) {
           appState = JSON.parse(item);
         }
         dispatch(appBootstrap({
-          emailAddress: appState.credentials.emailAddress,
-          token: appState.credentials.token,
-          notificationsEnabled: appState.notifications.enabled
+          emailAddress: appState.emailAddress,
+          token: appState.token,
+          notificationsEnabled: appState.notificationsEnabled
         }));
-        const nextRoute = appState.credentials.emailAddress
+        const nextRoute = appState.emailAddress
           ? routes.LOGIN
           : routes.SIGNIN;
         if (navigator) {
