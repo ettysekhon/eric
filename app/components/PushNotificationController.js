@@ -24,9 +24,6 @@ class PushNotificationController extends Component {
   componentWillMount() {
     PushNotificationIOS.addEventListener('register', this.onRegistered);
     PushNotificationIOS.removeEventListener('registrationError', this.onRegistrationError);
-    setTimeout(() => {
-      PushNotificationIOS.requestPermissions();
-    }, 1000);
   }
   componentWillUnmount() {
     PushNotificationIOS.removeEventListener('register', this.onRegistered);

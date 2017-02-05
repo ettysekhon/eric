@@ -96,11 +96,10 @@ const post = (url, body) => {
   });
 };
 
-const signIn = (emailAddress, token, deviceToken) => {
+const signIn = (emailAddress, token) => {
   return post(getEndpoint('signin'), {
     emailAddress,
-    token,
-    deviceToken
+    token
   });
 };
 
