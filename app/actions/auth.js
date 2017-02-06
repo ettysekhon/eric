@@ -1,5 +1,6 @@
 import {
   Alert,
+  Platform,
   PushNotificationIOS
 } from 'react-native';
 import objectAssign from 'object-assign';
@@ -79,9 +80,11 @@ export const login = (password, navigator) => {
     dispatch(loginRequest());
     API.login(emailAddress, password, app.token)
     .then((payload) => {
-      setTimeout(() => {
-        PushNotificationIOS.requestPermissions();
-      }, 5000);
+      if (Platform.OS !== 'android') {
+        setTimeout(() => {
+          PushNotificationIOS.requestPermissions();
+        }, 5000);
+      }
       if (navigator) {
         requestAnimationFrame(() => {
           return navigator.push({

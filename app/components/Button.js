@@ -8,7 +8,7 @@ import {
   Platform,
   StyleSheet,
   Text,
-  TouchableNativeFeedback,
+  // TouchableNativeFeedback,
   TouchableOpacity,
   View
 } from 'react-native';
@@ -44,27 +44,27 @@ class Button extends Component {
       );
     }
     // Extract Touchable props
-    let touchableProps = {
+    const touchableProps = {
       activeOpacity: this.props.isDisabled ? 1 : 0.7,
       onPress: !this.props.isDisabled && this.props.onPress,
       onPressIn: this.props.onPressIn,
       onPressOut: this.props.onPressOut,
       onLongPress: this.props.onLongPress
     };
-    if (Button.isAndroid) {
-      touchableProps = Object.assign(touchableProps, {
-        /* eslint-disable new-cap */
-        background: this.props.background || TouchableNativeFeedback.SelectableBackground()
-        /* eslint-enable new-cap */
-      });
-      return (
-        <TouchableNativeFeedback {...touchableProps}>
-          <Text style={[styles.button, this.props.style]}>
-            {this.renderInnerText()}
-          </Text>
-        </TouchableNativeFeedback>
-      );
-    }
+    // if (Button.isAndroid) {
+    //   touchableProps = Object.assign(touchableProps, {
+    //     /* eslint-disable new-cap */
+    //     background: this.props.background || TouchableNativeFeedback.SelectableBackground()
+    //     /* eslint-enable new-cap */
+    //   });
+    //   return (
+    //     <TouchableNativeFeedback {...touchableProps}>
+    //       <Text style={[styles.button, this.props.style]}>
+    //         {this.renderInnerText()}
+    //       </Text>
+    //     </TouchableNativeFeedback>
+    //   );
+    // }
     return (
       <TouchableOpacity
         {...touchableProps}
@@ -80,9 +80,6 @@ Button.displayName = 'Button';
 
 Button.propTypes = {
   activityIndicatorColor: PropTypes.string,
-  background: (TouchableNativeFeedback.propTypes)
-    ? TouchableNativeFeedback.propTypes.background
-    : PropTypes.any,
   children: PropTypes.string.isRequired,
   disabledStyle: Text.propTypes.style,
   isDisabled: PropTypes.bool,

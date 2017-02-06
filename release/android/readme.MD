@@ -16,10 +16,10 @@
   2. Edit the file ~/.gradle/gradle.properties and add the following (replace ***** with the correct keystore password, alias and key password) directory in your project folder.
 
   ```
-    BOXLIST_RELEASE_STORE_FILE=boxlist.keystore
-    BOXLIST_RELEASE_KEY_ALIAS=boxlist
-    BOXLIST_RELEASE_STORE_PASSWORD=boxlistes
-    BOXLIST_RELEASE_KEY_PASSWORD=boxlistes```
+    ERIC_RELEASE_STORE_FILE=eric.keystore
+    ERIC_RELEASE_KEY_ALIAS=eric
+    ERIC_RELEASE_STORE_PASSWORD=erices
+    ERIC_RELEASE_KEY_PASSWORD=erices```
 
 ### Adding signing config to your app's gradle config:
 Edit the file android/app/build.gradle in your project folder and add the signing config:
@@ -30,10 +30,10 @@ android {
     defaultConfig { ... }
     signingConfigs {
         release {
-            storeFile file(BOXLIST_RELEASE_STORE_FILE)
-            storePassword BOXLIST_RELEASE_STORE_PASSWORD
-            keyAlias BOXLIST_RELEASE_KEY_ALIAS
-            keyPassword BOXLIST_RELEASE_KEY_PASSWORD
+            storeFile file(ERIC_RELEASE_STORE_FILE)
+            storePassword ERIC_RELEASE_STORE_PASSWORD
+            keyAlias ERIC_RELEASE_KEY_ALIAS
+            keyPassword ERIC_RELEASE_KEY_PASSWORD
         }
     }
     buildTypes {

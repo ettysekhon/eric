@@ -5,6 +5,7 @@ import React, {
 
 
 import {
+  Dimensions,
   StatusBar,
   StyleSheet,
   View
@@ -26,12 +27,13 @@ class App extends Component {
     this.onLayout = this.onLayout.bind(this);
   }
   onLayout(e) {
-    const { width, height } = e.nativeEvent.layout;
+    // const { width, height } = e.nativeEvent.layout;
+    const { height, width } = Dimensions.get('window');
     const orientation = (width > height) ? 'LANDSCAPE' : 'PORTRAIT';
     if (currentOrientation !== orientation) {
+      currentOrientation = orientation;
       this.props.updateOrientation(orientation);
     }
-    currentOrientation = orientation;
   }
   render() {
     return (
