@@ -14,5 +14,13 @@ export default create({
       backgroundColor: 'white',
       marginHorizontal: normalize(18)
     }
+  },
+  empty: {
+    padding: normalize(18),
+    android: {
+      padding: normalize(18),
+      backgroundColor: 'white',
+      marginHorizontal: normalize(18)
+    }
   }
 });

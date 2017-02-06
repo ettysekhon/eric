@@ -9,7 +9,7 @@ import styles from './Styles/CardContentStyles';
 
 const CardContent = () => {
   return (
-    <View style={styles.content} />
+    <View style={styles.empty} />
   );
 };
 

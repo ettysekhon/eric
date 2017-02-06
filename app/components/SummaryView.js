@@ -108,16 +108,19 @@ class SummaryView extends Component {
     /* eslint-enable react/no-set-state */
   }
   render() {
-    const { error } = this.props;
+    const { error, orientation } = this.props;
     const { subTitle, title } = this.state.summary;
     const summary = this.state.summary.data || [];
     const top10 = this.state.top10 || [];
     const errorMessage = 'Howdy! Looks like you are hiding in a cave. Please connect to the internet and try again.';
     const onRefresh = this.onRefresh;
     const summaryCards = summary.map((card, index) => {
+      const deltaData = orientation === 'PORTRAIT'
+        ? card.delta
+        : [];
       return (
         <SummaryCard
-          delta={card.delta}
+          delta={deltaData}
           key={index}
           orientation={this.props.orientation}
           tables={card.tables}

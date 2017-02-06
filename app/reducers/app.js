@@ -41,7 +41,7 @@ const reducer = (state = blankState, action) => {
   case ActionTypes.ADOBE_SUCCESS:
     return { ...state,
       isLoading: false,
-      token: action.payload.token };
+      token: action.payload.token || state.token };
   case ActionTypes.LOGIN_REQUEST:
     return { ...state,
       isLoading: true,

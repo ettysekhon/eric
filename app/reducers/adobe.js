@@ -13,7 +13,7 @@ const reducer = (state = blankState, action) => {
   switch (action.type) {
   case ActionTypes.ADOBE_REQUEST:
     return objectAssign({}, blankState, { isLoading: true });
-  case ActionTypes.ADOBEFAILURE:
+  case ActionTypes.ADOBE_FAILURE:
     return objectAssign({}, blankState, { error: true });
   case ActionTypes.ADOBE_SUCCESS:
     return objectAssign({}, blankState, {
